@@ -1,26 +1,21 @@
-const { linkFields } = require("../../../lib/link");
-
 module.exports = {
   fields: {
     add: {
       siteTitle: {
         label: "Site Title",
         type: "string",
-        def: "My Site",
+        def: "Matthew Brunetti",
       },
-      footerLinks: {
-        label: "Footer Links",
-        type: "array",
-        titleField: "linkText",
-        fields: {
-          add: linkFields(),
-        },
+      myName: {
+        label: "My Name",
+        type: "string",
+        def: "Matthew Brunetti",
       },
     },
     group: {
       general: {
         label: "General",
-        fields: ["siteTitle", "footerLinks"],
+        fields: ["siteTitle", "myName"],
       },
     },
   },

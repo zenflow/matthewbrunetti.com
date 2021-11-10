@@ -37,15 +37,5 @@ async function initDb(self) {
   console.log('- Created admin user with username "admin" and password "admin".');
   console.log("  Please log in and change this password.");
 
-  // TODO: Is there an easier way to do this?
-  // TODO: What if I want to start with the published version?
-  const globalDoc = await self.apos.global.findGlobal(req.clone({ mode: "draft" }));
-  globalDoc.footerLinks = [
-    { linkText: "Home", linkType: "custom", linkUrl: "/" },
-    { linkText: "Blog", linkType: "custom", linkUrl: "/blog" },
-  ];
-  await self.apos.global.update(req, globalDoc);
-  await self.apos.global.publish(req, globalDoc);
-
   console.log("--- Done initializing database ---");
 }
