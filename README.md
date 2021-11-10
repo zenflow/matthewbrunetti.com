@@ -1,6 +1,7 @@
-# apos-my-site
+# matthewbrunetti.com
 
-> A Personal Website powered by [Apostrophe CMS v3](https://v3.docs.apostrophecms.org/)
+> Powered by [Apostrophe CMS v3](https://v3.docs.apostrophecms.org/)
+> Forked from [apos-my-site boilerplate](https://github.com/zenflow/apos-my-site)
 
 ## Development
 
@@ -14,8 +15,8 @@
 ### Setup
 
 1. Fork this repo on GitHub
-2. Clone your fork onto your local machine (`git clone https://github.com/<your username/apos-my-site`)
-3. `cd` into the repo on your local machine (`cd apos-my-site`)
+2. Clone your fork onto your local machine (`git clone https://github.com/<your username/matthewbrunetti.com`)
+3. `cd` into the repo on your local machine (`cd matthewbrunetti.com`)
 4. Install dependencies (`npm install`)
 5. Copy contents of [`.env.example`](./.env.example) into `.env`
    - These defaults are good for local development, and you can edit this file at any time.
@@ -32,7 +33,7 @@
 #### Advanced
 
 - Dump local database to `db` folder (requires MongoDB Database Tools):
-  `MONGODB_URI=mongodb://localhost/apos-my-site ./scripts/db-dump.sh`
+  `MONGODB_URI=mongodb://localhost/matthew-brunetti ./scripts/db-dump.sh`
 
 ## Deploying to production
 

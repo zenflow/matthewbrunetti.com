@@ -1,5 +1,5 @@
 {
-  "name": "apos-my-site",
+  "name": "matthewbrunetti.com",
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
@@ -11,7 +11,7 @@
     "clean": "del-cli apos-build data public/apos-frontend",
     "build": "cross-env NODE_ENV=production node app @apostrophecms/asset:build",
     "serve": "cross-env NODE_ENV=production dotenv node app",
-    "db-restore": "cross-env MONGODB_URI=mongodb://localhost/apos-my-site node scripts/db-restore"
+    "db-restore": "cross-env MONGODB_URI=mongodb://localhost/matthew-brunetti node scripts/db-restore"
   },
   "dependencies": {
     "@apostrophecms/form": "^1.0.0-beta.1",

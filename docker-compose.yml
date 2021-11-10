@@ -9,4 +9,4 @@ services:
     env_file: .env
     environment:
       # Adjust for being inside a Docker container
-      - APOS_MONGODB_URI=mongodb://host.docker.internal/apos-my-site
+      - APOS_MONGODB_URI=mongodb://host.docker.internal/matthew-brunetti
