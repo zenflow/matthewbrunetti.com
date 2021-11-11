@@ -32,5 +32,7 @@ require("apostrophe")({
     article: {},
     topic: {},
     "article-page": {},
+    "main-hero-widget": {},
+    "kitchen-sink-widget": {},
   },
 });

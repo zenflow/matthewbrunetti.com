@@ -1543,7 +1543,6 @@ a:focus {
 }
 
 .footer .footer-menu p {
-  color: #ffffff;
   font-size: 22px;
   font-weight: 600;
   line-height: 20px;
@@ -1567,7 +1566,6 @@ a:focus {
 .footer .footer-social a i {
   margin-right: 15px;
   font-size: 20px;
-  color: #ffffff;
   transition: .3s;
 }
 
@@ -1575,7 +1573,11 @@ a:focus {
   margin: 0;
 }
 
-.footer .footer-social a:hover i {
+.footer a, .footer a:hover {
+  color: #ffffff;
+}
+
+.footer a:hover, .footer a:hover i {
   color: #414141;
 }
 

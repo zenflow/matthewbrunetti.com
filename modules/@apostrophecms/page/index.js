@@ -5,6 +5,14 @@ module.exports = {
         name: "default-page",
         label: "Default",
       },
+      {
+        name: "@apostrophecms/home-page",
+        label: "Home",
+      },
+      {
+        name: "article-page",
+        label: "Blog Index",
+      },
     ],
     park: [
       {

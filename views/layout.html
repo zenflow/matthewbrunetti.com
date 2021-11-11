@@ -35,7 +35,7 @@
   <div class="navcontainer navcontainer-scrolledtotop {% if fancyNavbar and not data.edit %} navcontainer-fancy{% endif %}">
     <div class="navbar navbar-expand-lg bg-light navbar-light">
       <div class="container-fluid">
-        <a href="index.html" class="navbar-brand">DevFolio</a>
+        <a href="/" class="navbar-brand">{{ data.global.siteTitle }}</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,12 +44,7 @@
           <div class="navbar-nav ml-auto">
             <a href="#home" class="nav-item nav-link active">Home</a>
             <a href="#about" class="nav-item nav-link">About</a>
-            <a href="#service" class="nav-item nav-link">Service</a>
-            <a href="#experience" class="nav-item nav-link">Experience</a>
-            <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
-            <a href="#price" class="nav-item nav-link">Price</a>
-            <a href="#review" class="nav-item nav-link">Review</a>
-            <a href="#team" class="nav-item nav-link">Team</a>
+            <a href="#service" class="nav-item nav-link">Services</a>
             <a href="#blog" class="nav-item nav-link">Blog</a>
             <a href="#contact" class="nav-item nav-link">Contact</a>
           </div>
@@ -70,23 +65,32 @@
   <div class="container-fluid">
     <div class="container">
       <div class="footer-info">
-        <h2>Kate Winslet</h2>
-        <h3>123 Street, New York, USA</h3>
+        <h2>{{ data.global.myName }}</h2>
+        <h3>{{ data.global.myTitle }}</h3>
         <div class="footer-menu">
-          <p>+012 345 67890</p>
-          <p>info@example.com</p>
+          <p>
+            <a href="tel:{{ data.global.myPhoneNumber }}">
+              {{ data.global.myPhoneNumber }}
+            </a>
+          </p>
+          <p>
+            <a href="mailto:{{ data.global.myEmailAddress }}">
+              {{ data.global.myEmailAddress }}
+            </a>
+          </p>
         </div>
         <div class="footer-social">
-          <a href=""><i class="fab fa-twitter"></i></a>
-          <a href=""><i class="fab fa-facebook-f"></i></a>
-          <a href=""><i class="fab fa-youtube"></i></a>
-          <a href=""><i class="fab fa-instagram"></i></a>
-          <a href=""><i class="fab fa-linkedin-in"></i></a>
+          {% for item in data.global.mySocialMedia %}
+            {% set iconName = ({"GitHub": "github", "LinkedIn": "linkedin-in", "Twitter": "twitter", "Facebook": "facebook-f", "Instagram": "fa-instagram", "YouTube": "youtube"})[item.platform] %}
+            <a href="{{ item.url }}" target="_blank">
+              <i class="fab fa-{{ iconName }}"></i>
+            </a>
+          {% endfor %}
         </div>
       </div>
     </div>
     <div class="container copyright">
-      <p>&copy; <a href="#">Your Site Name</a>, All Right Reserved | Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+      <p>&copy; {{ data.global.myName }}, All Right Reserved | Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
     </div>
   </div>
 </div>
