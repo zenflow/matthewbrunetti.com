@@ -2,6 +2,9 @@
 
 {% set title = title or data.piece.title or data.page.title %}
 {% set verticalCenterContent = verticalCenterContent or false %}
+{% set fancyNavbar = fancyNavbar or false %}
+
+<!-- --- --- --- --- --- --- --- -->
 
 {% block title %}
   {% if title %}
@@ -11,43 +14,110 @@
   {% endif %}
 {% endblock %}
 
+<!-- --- --- --- --- --- --- --- -->
+
+{% block extraHead %}
+<link href="/asset/img/favicon.ico" rel="icon">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="/asset/lib/animate/animate.min.css" rel="stylesheet">
+<link href="/asset/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="/asset/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+<link href="/asset/css/style.css" rel="stylesheet">
+{% endblock %}
+
+<!-- --- --- --- --- --- --- --- -->
+
 {% block beforeMain %}
-<div class="bp-wrapper">
-  <header class="bp-header">
-    <div class="bp-header-content">
-      <img class="bp-header__logo" src="/images/logo.png" alt="ApostropheCMS logo">
-      <nav class="bp-nav"></nav>
-      {% if not data.user %}
-        <a class="bp-button" href="/login">Login</a>
-      {% endif %}
-    </div>
-  </header>
-  <main class="bp-main {% if verticalCenterContent %}bp-main__vertical_center_content{% endif %}">
-    <div class="bp-main-content">
-{% endblock %}
+<div class="main-wrapper{% if verticalCenterContent %} vertical-center-content{% endif %}">
+  <!-- Nav Bar Start -->
+  <div class="navcontainer navcontainer-scrolledtotop {% if fancyNavbar and not data.edit %} navcontainer-fancy{% endif %}">
+    <div class="navbar navbar-expand-lg bg-light navbar-light">
+      <div class="container-fluid">
+        <a href="index.html" class="navbar-brand">DevFolio</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-{# This block is overridden by specific page templates #}
-{% block main %} {% endblock %}
-
-{% block afterMain %}
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+          <div class="navbar-nav ml-auto">
+            <a href="#home" class="nav-item nav-link active">Home</a>
+            <a href="#about" class="nav-item nav-link">About</a>
+            <a href="#service" class="nav-item nav-link">Service</a>
+            <a href="#experience" class="nav-item nav-link">Experience</a>
+            <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
+            <a href="#price" class="nav-item nav-link">Price</a>
+            <a href="#review" class="nav-item nav-link">Review</a>
+            <a href="#team" class="nav-item nav-link">Team</a>
+            <a href="#blog" class="nav-item nav-link">Blog</a>
+            <a href="#contact" class="nav-item nav-link">Contact</a>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <!-- Nav Bar End -->
+
+  <main>
+    {% endblock %}
+    {% block afterMain %}
   </main>
-  <footer class="bp-footer">
-    {% if data.global.footerLinks.length %}
-      <h3>Links</h3>
-      <ul>
-        {% for link in data.global.footerLinks %}
-          <li>
-            {{ apos.helper.getLinkHtml(link, { class: 'footer-links__link' }) | safe }}
-          </li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-  </footer>
-</div>{# Close .bp-wrapper #}
+</div>
+
+<!-- Footer Start -->
+<div class="footer">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="footer-info">
+        <h2>Kate Winslet</h2>
+        <h3>123 Street, New York, USA</h3>
+        <div class="footer-menu">
+          <p>+012 345 67890</p>
+          <p>info@example.com</p>
+        </div>
+        <div class="footer-social">
+          <a href=""><i class="fab fa-twitter"></i></a>
+          <a href=""><i class="fab fa-facebook-f"></i></a>
+          <a href=""><i class="fab fa-youtube"></i></a>
+          <a href=""><i class="fab fa-instagram"></i></a>
+          <a href=""><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright">
+      <p>&copy; <a href="#">Your Site Name</a>, All Right Reserved | Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+    </div>
+  </div>
+</div>
+<!-- Footer End -->
+
+<!-- Back to top button -->
+<a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+<!-- Pre Loader -->
+{% if not data.edit %}
+<div id="loader" class="show">
+  <div class="loader"></div>
+</div>
+{% endif %}
+
 {% endblock %}
+
+<!-- --- --- --- --- --- --- --- -->
 
 {% block extraBody %}
+<script>Object.assign(document.body.dataset, { spy: 'scroll', target: '.navbar', offset: '51' })</script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="/asset/lib/easing/easing.min.js"></script>
+<script src="/asset/lib/wow/wow.min.js"></script>
+<script src="/asset/lib/waypoints/waypoints.min.js"></script>
+<script src="/asset/lib/typed/typed.min.js"></script>
+<script src="/asset/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="/asset/lib/isotope/isotope.pkgd.min.js"></script>
+<script src="/asset/lib/lightbox/js/lightbox.min.js"></script>
+<script src="/asset/js/main.js"></script>
 {% if apos.helper.isDev() %}
 <script>
   window.data = {{ apos.helper.jsonStringify(data) | safe }};
