@@ -1,0 +1,9 @@
+<div class="button-set-widget">
+  <div class="wrap-a">
+    <div class="wrap-b">
+      {% for button in data.widget.buttons %}
+      <a class="btn" href="{{button.url}}" target="{{button.target}}">{{button.text}}</a>
+      {% endfor %}
+    </div>
+  </div>
+</div>

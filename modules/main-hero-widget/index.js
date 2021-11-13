@@ -4,6 +4,18 @@ module.exports = {
     label: "Main Hero",
   },
   fields: {
-    add: {},
+    add: {
+      intro: {
+        label: "Intro",
+        type: "area",
+        options: {
+          widgets: {
+            "@apostrophecms/rich-text": {},
+            "typed-text": {},
+            "button-set": {},
+          },
+        },
+      },
+    },
   },
 };

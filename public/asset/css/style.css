@@ -325,6 +325,12 @@ a:focus {
   flex-direction: column;
 }
 
+.hero-text {
+  font-size: 35px;
+  font-weight: 300;
+  color: #ffffff;
+}
+
 .hero .hero-text p {
   color: #ffffff;
   font-size: 25px;
@@ -341,40 +347,11 @@ a:focus {
 }
 
 .hero .hero-text h2 {
-  display: inline-block;
   margin: 0;
   height: 35px;
   color: #ffffff;
   font-size: 35px;
   font-weight: 600;
-}
-
-.hero .hero-text .typed-text {
-  display: none;
-}
-
-.hero .hero-text .typed-cursor {
-  font-size: 35px;
-  font-weight: 300;
-  color: #ffffff;
-}
-
-.hero .hero-btn .btn {
-  margin-top: 35px;
-  color: #EF233C;
-  background: #ffffff;
-  box-shadow: inset 0 0 0 50px #ffffff;
-}
-
-.hero .hero-btn .btn:hover {
-  color: #ffffff;
-  background: transparent;
-  box-shadow: inset 0 0 0 0 #ffffff;
-  border-color: #ffffff;
-}
-
-.hero .hero-btn .btn:first-child {
-  margin-right: 10px;
 }
 
 @media (max-width: 991.98px) {
@@ -397,11 +374,6 @@ a:focus {
     font-size: 25px;
     height: 25px;
   }
-
-  .hero .hero-btn .btn {
-    padding: 12px 30px;
-    letter-spacing: 1px;
-  }
 }
 
 @media (max-width: 767.98px) {
@@ -410,8 +382,7 @@ a:focus {
   }
 
   .hero,
-  .hero .hero-text,
-  .hero .hero-btn {
+  .hero .hero-text {
     width: 100%;
     text-align: center;
   }
@@ -428,11 +399,6 @@ a:focus {
     font-size: 22px;
     height: 22px;
   }
-
-  .hero .hero-btn .btn {
-    padding: 10px 15px;
-    letter-spacing: 1px;
-  }
 }
 
 @media (max-width: 575.98px) {
@@ -448,13 +414,57 @@ a:focus {
     font-size: 18px;
     height: 18px;
   }
+}
 
-  .hero .hero-btn .btn {
+/********** Button Set *********/
+
+.button-set-widget {
+  padding: 35px 0;
+}
+/* make position reflect computed `text-align` */
+.button-set-widget .wrap-a {
+  display: inline-block;
+}
+.button-set-widget .wrap-b {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.button-set-widget .btn {
+  color: #EF233C;
+  background: #ffffff;
+  box-shadow: inset 0 0 0 50px #ffffff;
+  border-color: #EF233C;;
+}
+
+.button-set-widget .btn:hover {
+  color: #ffffff;
+  background: #EF233C;
+  /* background: transparent; */
+  box-shadow: inset 0 0 0 0 #ffffff;
+  border-color: #ffffff;
+}
+
+@media (max-width: 991.98px) {
+  .button-set-widget .btn {
+    padding: 12px 30px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .button-set-widget .btn {
+    padding: 10px 15px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .button-set-widget .btn {
     padding: 8px 10px;
     letter-spacing: 0;
   }
 }
-
 
 /*******************************/
 /******* Section Header ********/

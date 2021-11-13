@@ -34,5 +34,7 @@ require("apostrophe")({
     "article-page": {},
     "main-hero-widget": {},
     "kitchen-sink-widget": {},
+    "typed-text-widget": {},
+    "button-set-widget": {},
   },
 });
