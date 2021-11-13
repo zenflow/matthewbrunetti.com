@@ -16,6 +16,16 @@ module.exports = {
           },
         },
       },
+      image: {
+        label: "Image",
+        type: "area",
+        options: {
+          max: 1,
+          widgets: {
+            "@apostrophecms/image": {},
+          },
+        },
+      },
     },
   },
 };
