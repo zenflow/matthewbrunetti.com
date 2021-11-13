@@ -286,6 +286,17 @@ a:focus {
   }
 }
 
+@media (max-width: 575.98px) {
+  .navbar .navbar-brand {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar .navbar-brand {
+    font-size: 16px;
+  }
+}
 
 /*******************************/
 /********** Hero CSS ***********/
