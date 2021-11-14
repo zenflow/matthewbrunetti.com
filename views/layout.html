@@ -30,6 +30,15 @@
 <!-- --- --- --- --- --- --- --- -->
 
 {% block beforeMain %}
+<style>
+  {% set themeColorPrimary = data.global.themeColorPrimary or "#000000" %}
+  {% set themeColorPrimaryRgb = apos.helper.hexToRgb(themeColorPrimary) %}
+  :root {
+    --theme-color-primary: {{ themeColorPrimary }};
+    --theme-color-primary-rgb: {{ themeColorPrimaryRgb.r }}, {{ themeColorPrimaryRgb.g }}, {{ themeColorPrimaryRgb.b }};
+  }
+</style>
+
 <div class="main-wrapper{% if verticalCenterContent %} vertical-center-content{% endif %}">
   <!-- Nav Bar Start -->
   <div class="navcontainer navcontainer-scrolledtotop {% if fancyNavbar and not data.edit %} navcontainer-fancy{% endif %}">

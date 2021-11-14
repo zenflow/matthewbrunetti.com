@@ -5,6 +5,17 @@ module.exports = {
   },
   fields: {
     add: {
+      _texture: {
+        label: "Background Texture",
+        type: "relationship",
+        withType: "@apostrophecms/image",
+        max: 1,
+      },
+      isFixedBackground: {
+        label: "Fixed Background",
+        type: "boolean",
+        def: true,
+      },
       intro: {
         label: "Intro",
         type: "area",

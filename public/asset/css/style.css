@@ -51,7 +51,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-  color: #EF233C;
+  color: var(--theme-color-primary);
   outline: none;
   text-decoration: none;
 }
@@ -71,20 +71,20 @@ a:focus {
   font-weight: 600;
   letter-spacing: 1px;
   color: #ffffff;
-  background: #EF233C;
+  background: var(--theme-color-primary);
   border: 2px solid transparent;
   border-radius: 0;
-  box-shadow: inset 0 0 0 50px #EF233C;
+  box-shadow: inset 0 0 0 50px var(--theme-color-primary);
   transition: ease-out 0.3s;
   -webkit-transition: ease-out 0.3s;
   -moz-transition: ease-out 0.3s;
 }
 
 .btn:hover {
-  color: #EF233C;
+  color: var(--theme-color-primary);
   background: transparent;
-  box-shadow: inset 0 0 0 0 #EF233C;
-  border-color: #EF233C;
+  box-shadow: inset 0 0 0 0 var(--theme-color-primary);
+  border-color: var(--theme-color-primary);
 }
 
 #loader {
@@ -118,7 +118,7 @@ a:focus {
   width: 45px;
   height: 45px;
   border: 5px solid #dddddd;
-  border-top: 5px solid #EF233C;
+  border-top: 5px solid var(--theme-color-primary);
   border-radius: 50%;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
@@ -190,6 +190,7 @@ a:focus {
   font-weight: 700;
   letter-spacing: 2px;
   transition: .5s;
+  color: var(--theme-color-primary);
 }
 
 .navbar .navbar-brand img {
@@ -203,7 +204,6 @@ a:focus {
   border-radius: 0;
   background: #f8f9fa;
 }
-
 @media (min-width: 992px) {
   .navcontainer {
     padding-top: 60px;
@@ -222,10 +222,6 @@ a:focus {
   .navcontainer-fancy.navcontainer-scrolledtotop .navbar {
     padding: 30px 60px;
     background: transparent !important;
-  }
-
-  .navbar .navbar-brand {
-    color: #EF233C;
   }
 
   .navcontainer-fancy.navcontainer-scrolledtotop .navbar-brand {
@@ -247,7 +243,7 @@ a:focus {
 
   .navbar-light .navbar-nav .nav-link:hover,
   .navbar-light .navbar-nav .nav-link.active {
-    color: #EF233C;
+    color: var(--theme-color-primary);
   }
 
   .navcontainer-fancy.navcontainer-scrolledtotop .navbar-nav .nav-link:hover,
@@ -267,10 +263,6 @@ a:focus {
   .navbar {
     padding: 15px;
     background: #ffffff !important;
-  }
-
-  .navbar .navbar-brand {
-    color: #EF233C;
   }
 
   .navbar .navbar-nav {
@@ -306,7 +298,7 @@ a:focus {
   width: 100%;
   padding: 120px 0 0 0;
   overflow: hidden;
-  background: linear-gradient(rgba(239, 35, 60, .95), rgba(239, 35, 60, .95)), url(../img/hero-bg.jpg);
+  background: linear-gradient(rgba(var(--theme-color-primary-rgb), .85), rgba(var(--theme-color-primary-rgb), .85)), var(--hero-background-texture);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -443,15 +435,15 @@ a:focus {
   gap: 10px;
 }
 .button-set-widget .btn {
-  color: #EF233C;
+  color: var(--theme-color-primary);
   background: #ffffff;
   box-shadow: inset 0 0 0 50px #ffffff;
-  border-color: #EF233C;;
+  border-color: var(--theme-color-primary);;
 }
 
 .button-set-widget .btn:hover {
   color: #ffffff;
-  background: #EF233C;
+  background: var(--theme-color-primary);
   /* background: transparent; */
   box-shadow: inset 0 0 0 0 #ffffff;
   border-color: #ffffff;
@@ -506,7 +498,7 @@ a:focus {
   top: 11px;
   right: 0;
   left: -30px;
-  background: #EF233C;
+  background: var(--theme-color-primary);
   z-index: -1;
 }
 
@@ -517,7 +509,7 @@ a:focus {
   height: 3px;
   top: 11px;
   left: 3px;
-  background: #EF233C;
+  background: var(--theme-color-primary);
   z-index: 1;
 }
 
@@ -599,7 +591,7 @@ a:focus {
 
 .about .progress .progress-bar {
   width: 0px;
-  background: #EF233C;
+  background: var(--theme-color-primary);
   border-radius: 10px;
   transition: 2s;
 }
@@ -632,7 +624,7 @@ a:focus {
   content: '';
   position: absolute;
   width: 2px;
-  background: #EF233C;
+  background: var(--theme-color-primary);
   top: 0;
   bottom: 0;
   left: 50%;
@@ -664,7 +656,7 @@ a:focus {
   top: 48px;
   right: -8px;
   background: #ffffff;
-  border: 2px solid #EF233C;
+  border: 2px solid var(--theme-color-primary);
   border-radius: 16px;
   z-index: 1;
 }
@@ -696,7 +688,7 @@ a:focus {
   top: 44px;
   font-size: 16px;
   font-weight: 600;
-  color: #EF233C;
+  color: var(--theme-color-primary);
   text-transform: uppercase;
   letter-spacing: 1px;
   z-index: 1;
@@ -810,7 +802,7 @@ a:focus {
 }
 
 .service .service-item:hover {
-  box-shadow: inset 800px 0 0 0 #EF233C;
+  box-shadow: inset 800px 0 0 0 var(--theme-color-primary);
 }
 
 .service .service-icon {
@@ -820,14 +812,14 @@ a:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #EF233C;
+  border: 1px solid var(--theme-color-primary);
   background: #ffffff;
 }
 
 .service .service-icon i {
   position: relative;
   font-size: 60px;
-  color: #EF233C;
+  color: var(--theme-color-primary);
   transition: .3s;
 }
 
@@ -895,10 +887,10 @@ a:focus {
   font-size: 14px;
   font-weight: 600;
   color: #ffffff;
-  background: #EF233C;
+  background: var(--theme-color-primary);
   border: 2px solid transparent;
   border-radius: 0;
-  box-shadow: inset 0 0 0 50px #EF233C;
+  box-shadow: inset 0 0 0 50px var(--theme-color-primary);
   transition: ease-out 0.3s;
   -webkit-transition: ease-out 0.3s;
   -moz-transition: ease-out 0.3s;
@@ -906,10 +898,10 @@ a:focus {
 
 .portfolio #portfolio-filter li:hover,
 .portfolio #portfolio-filter li.filter-active {
-  color: #EF233C;
+  color: var(--theme-color-primary);
   background: transparent;
-  box-shadow: inset 0 0 0 0 #EF233C;
-  border-color: #EF233C;
+  box-shadow: inset 0 0 0 0 var(--theme-color-primary);
+  border-color: var(--theme-color-primary);
 }
 
 .portfolio .portfolio-item {
@@ -971,10 +963,10 @@ a:focus {
 }
 
 .portfolio .portfolio-item:hover a.btn {
-  color: #EF233C;
+  color: var(--theme-color-primary);
   background: transparent;
-  box-shadow: inset 0 0 0 0 #EF233C;
-  border-color: #EF233C;
+  box-shadow: inset 0 0 0 0 var(--theme-color-primary);
+  border-color: var(--theme-color-primary);
 }
 
 
@@ -986,7 +978,7 @@ a:focus {
   width: 100%;
   margin: 45px 0;
   padding: 90px 0;
-  background: #EF233C;
+  background: var(--theme-color-primary);
 }
 
 .banner .container {
@@ -1023,7 +1015,7 @@ a:focus {
 
 .banner .banner-text .btn {
   margin-top: 15px;
-  color: #EF233C;
+  color: var(--theme-color-primary);
   background: #ffffff;
   box-shadow: inset 0 0 0 50px #ffffff;
 }
@@ -1077,7 +1069,7 @@ a:focus {
 }
 
 .price .price-item.featured-item .price-header {
-  color: #EF233C;
+  color: var(--theme-color-primary);
 }
 
 .price .price-title h2 {
@@ -1107,7 +1099,7 @@ a:focus {
 }
 
 .price .price-item.featured-item h2 {
-  color: #EF233C;
+  color: var(--theme-color-primary);
 }
 
 .price .price-body {
@@ -1143,15 +1135,15 @@ a:focus {
 
 .price .price-item.featured-item .price-action .btn {
   color: #ffffff;
-  background: #EF233C;
-  box-shadow: inset 0 0 0 50px #EF233C;
+  background: var(--theme-color-primary);
+  box-shadow: inset 0 0 0 50px var(--theme-color-primary);
 }
 
 .price .price-item.featured-item .price-action .btn:hover {
-  color: #EF233C;
+  color: var(--theme-color-primary);
   background: transparent;
-  box-shadow: inset 0 0 0 0 #EF233C;
-  border-color: #EF233C;
+  box-shadow: inset 0 0 0 0 var(--theme-color-primary);
+  border-color: var(--theme-color-primary);
 }
 
 
@@ -1194,7 +1186,7 @@ a:focus {
 }
 
 .team .team-text h2 {
-  color: #EF233C;
+  color: var(--theme-color-primary);
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 5px;
@@ -1233,7 +1225,7 @@ a:focus {
 }
 
 .team .team-item:hover {
-  box-shadow: inset 800px 0 0 0 #EF233C;
+  box-shadow: inset 800px 0 0 0 var(--theme-color-primary);
 }
 
 .team .team-item:hover .team-img img {
@@ -1283,7 +1275,7 @@ a:focus {
   position: relative;
   margin: 45px 0;
   padding: 90px 0;
-  background: #EF233C;
+  background: var(--theme-color-primary);
 }
 
 .testimonial .container {
@@ -1335,7 +1327,7 @@ a:focus {
 }
 
 .testimonial .testimonial-text h3 {
-  color: #EF233C;
+  color: var(--theme-color-primary);
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 10px;
@@ -1373,7 +1365,7 @@ a:focus {
   position: relative;
   width: 100%;
   margin: 45px 0;
-  background: #EF233C;
+  background: var(--theme-color-primary);
 }
 
 .contact .container-fluid {
@@ -1384,7 +1376,7 @@ a:focus {
 .contact .contact-form {
   position: relative;
   padding: 90px 0 90px 45px;
-  background: #EF233C;
+  background: var(--theme-color-primary);
 }
 
 .contact .contact-form input {
@@ -1418,7 +1410,7 @@ a:focus {
 
 .contact .contact-form .btn {
   margin-top: 35px;
-  color: #EF233C;
+  color: var(--theme-color-primary);
   background: #ffffff;
   box-shadow: inset 0 0 0 50px #ffffff;
 }
@@ -1531,7 +1523,7 @@ a:focus {
 /*******************************/
 .footer {
   position: relative;
-  background: #EF233C;
+  background: var(--theme-color-primary);
 }
 
 .footer .container-fluid {

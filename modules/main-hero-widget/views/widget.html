@@ -1,4 +1,16 @@
-<div class="hero" id="home">
+{% set uuid = apos.util.generateId() %}
+{% set texture = apos.attachment.first(data.widget._texture) %}
+<style>
+  .{{ uuid }} {
+    --hero-background-texture: url({{ apos.attachment.url(texture) }})
+  }
+</style>
+
+{% set style = "" %}
+{% if data.widget.isFixedBackground %}
+{% set style = style + "background-attachment: fixed; " %}
+{% endif %}
+<div class="hero {{ uuid }}" id="home" style="{{ style }}">
   <div class="container-fluid">
     <div class="row align-items-center">
       <div class="col-sm-12 col-md-6">

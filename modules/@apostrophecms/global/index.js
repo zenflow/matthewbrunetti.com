@@ -7,6 +7,12 @@ module.exports = {
         required: true,
         def: "Matthew Brunetti",
       },
+      themeColorPrimary: {
+        label: "Primary Color",
+        type: "color",
+        required: true,
+        def: "#196BD5FF",
+      },
       myName: {
         label: "My Name",
         type: "string",
@@ -64,6 +70,10 @@ module.exports = {
       general: {
         label: "General",
         fields: ["siteTitle"],
+      },
+      theme: {
+        label: "Theme",
+        fields: ["themeColorPrimary"],
       },
       myDetails: {
         label: "My Details",

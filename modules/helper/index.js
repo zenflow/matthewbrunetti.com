@@ -26,6 +26,15 @@ module.exports = {
         const options = { year: "numeric", month: "long", day: "numeric" };
         return new Date(input).toLocaleDateString(undefined, options);
       },
+      hexToRgb(hex) {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})?$/i.exec(hex);
+        return {
+          r: parseInt(result[1], 16),
+          g: parseInt(result[2], 16),
+          b: parseInt(result[3], 16),
+          a: result[4] ? parseInt(result[4], 16) : 255,
+        };
+      },
     });
   },
 };
