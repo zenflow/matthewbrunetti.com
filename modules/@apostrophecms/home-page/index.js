@@ -4,21 +4,12 @@ module.exports = {
   },
   fields: {
     add: {
-      hero: {
-        label: "Hero",
-        type: "area",
-        options: {
-          max: 1,
-          widgets: {
-            "main-hero": {},
-          },
-        },
-      },
       main: {
         label: "Content",
         type: "area",
         options: {
           widgets: {
+            "main-hero": {},
             "kitchen-sink": {},
           },
         },
@@ -27,7 +18,7 @@ module.exports = {
     group: {
       basics: {
         label: "Basics",
-        fields: ["title", "hero", "main"],
+        fields: ["title", "main"],
       },
     },
   },
