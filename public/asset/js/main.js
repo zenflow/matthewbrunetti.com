@@ -48,6 +48,9 @@
     }
   });
 
+  // Hero
+  $('.hero .hero-image img').tilt();
+
   // Skills
   $('.skills').waypoint(function () {
     $('.progress .progress-bar').each(function () {
