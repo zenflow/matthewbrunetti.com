@@ -38,5 +38,6 @@ require("apostrophe")({
     "button-set-widget": {},
     "section-generic-widget": {},
     "percentages-widget": {},
+    "section-list-widget": {},
   },
 });

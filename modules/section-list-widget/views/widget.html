@@ -1,0 +1,23 @@
+<div class="section-list-widget" id="services">
+  <div class="container">
+    <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+      <p>{{ data.widget.heading }}</p>
+      <h2>{{ data.widget.title }}</h2>
+    </div>
+    <div class="row">
+      {% for item in data.widget.items %}
+      <div class="col-lg-6 wow fadeInUp" data-wow-delay="{{ loop.index0 / 5 }}s">
+        <div class="section-list-widget__item">
+          <div class="section-list-widget__icon">
+            <i class="fa fa-{{ item.icon }}"></i>
+          </div>
+          <div class="section-list-widget__text">
+            <h3>{{ item.title }}</h3>
+            {% area item, 'description' with data.contextOptions %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

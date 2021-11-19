@@ -11,6 +11,7 @@ module.exports = {
           widgets: {
             "main-hero": {},
             "section-generic": {},
+            "section-list": {},
             "kitchen-sink": {},
           },
         },
