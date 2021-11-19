@@ -12,6 +12,7 @@ module.exports = {
             "main-hero": {},
             "section-generic": {},
             "section-list": {},
+            "section-banner": {},
             "kitchen-sink": {},
           },
         },

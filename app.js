@@ -39,5 +39,6 @@ require("apostrophe")({
     "section-generic-widget": {},
     "percentages-widget": {},
     "section-list-widget": {},
+    "section-banner-widget": {},
   },
 });
