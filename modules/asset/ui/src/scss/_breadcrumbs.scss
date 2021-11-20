@@ -1,9 +1,7 @@
-@import '../../../../../lib/_variables';
-
 .bp-breadcrumbs {
   margin-bottom: .5rem;
   padding: 1rem;
-  background: lighten($color-purple-light, 30%);
+  background: rgba(var(--theme-color-primary-rgb), .3);
 
   & > a {
     &:last-child {

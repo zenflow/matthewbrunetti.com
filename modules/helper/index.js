@@ -1,5 +1,4 @@
 const lodash = require("lodash");
-const { linkHelpers } = require("../../lib/link");
 
 module.exports = {
   options: {
@@ -8,7 +7,6 @@ module.exports = {
   init(self) {
     self.addHelpers({
       ...lodash,
-      ...linkHelpers,
       jsonStringify(o) {
         return JSON.stringify(o);
       },

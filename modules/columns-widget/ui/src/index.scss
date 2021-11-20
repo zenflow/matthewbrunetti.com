@@ -1,5 +1,3 @@
-@import "../../../../lib/_variables";
-
 .columns-widget {
   display: flex;
   justify-content: space-between;
@@ -9,7 +7,7 @@
   }
 }
 
-@media only screen and (max-width: $breakpoint-max-width-xs) {
+@media only screen and (max-width: 575.98px) {
   .columns-widget {
     flex-direction: column;
     .columns-widget__column {

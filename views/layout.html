@@ -1,6 +1,6 @@
 {% extends data.outerLayout %}
 
-{% set title = title or data.piece.title or data.page.title %}
+{% set title = title if title !== undefined else data.piece.title or data.page.title %}
 {% set verticalCenterContent = verticalCenterContent or false %}
 {% set fancyNavbar = fancyNavbar or false %}
 
