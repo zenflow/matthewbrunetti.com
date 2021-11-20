@@ -1,0 +1,14 @@
+<div class="percentages-widget">
+  {% for item in data.widget.items %}
+  <div class="percentages-widget__item">
+    <div class="percentages-widget__text">
+      <p>{{ item.label }}</p>
+      <p>{{ item.percentage }}%</p>
+    </div>
+    <div class="percentages-widget__bar">
+      <div class="progress-bar" role="progressbar" aria-valuenow="{{ item.percentage }}" aria-valuemin="0"
+           aria-valuemax="100"></div>
+    </div>
+  </div>
+  {% endfor %}
+</div>

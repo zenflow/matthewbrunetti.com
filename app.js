@@ -36,5 +36,7 @@ require("apostrophe")({
     "kitchen-sink-widget": {},
     "typed-text-widget": {},
     "button-set-widget": {},
+    "section-generic-widget": {},
+    "percentages-widget": {},
   },
 });

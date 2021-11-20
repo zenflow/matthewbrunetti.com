@@ -10,6 +10,7 @@ module.exports = {
         options: {
           widgets: {
             "main-hero": {},
+            "section-generic": {},
             "kitchen-sink": {},
           },
         },

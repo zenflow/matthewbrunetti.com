@@ -1,0 +1,30 @@
+{% set isImageLeft = data.widget.imagePosition === 'left' %}
+{% set isImageRight = data.widget.imagePosition === 'right' %}
+{% set isNoImage = data.widget.imagePosition === '' %}
+
+<div class="section-generic-widget" id="about">
+  <div class="container-fluid">
+    <div class="row align-items-center wow fadeInUp" data-wow-delay="0.1s">
+      {% if isImageLeft %}
+      <div class="section-generic-widget__img col-lg-6">
+        {% area data.widget, 'image' with data.contextOptions %}
+      </div>
+      {% endif %}
+      <div
+        class="section-generic-widget__content {{ 'col-lg-12' if isNoImage else 'col-lg-6' }}"
+        style="text-align: {{ data.widget.textAlign or 'left' }}"
+      >
+        <div class="section-header">
+          <p>{{ data.widget.heading }}</p>
+          <h2>{{ data.widget.title }}</h2>
+        </div>
+        {% area data.widget, 'main' with data.contextOptions %}
+      </div>
+      {% if isImageRight %}
+      <div class="section-generic-widget__img col-lg-6">
+        {% area data.widget, 'image' with data.contextOptions %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

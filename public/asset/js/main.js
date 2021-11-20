@@ -38,7 +38,7 @@
       event.preventDefault();
 
       $('html, body').animate({
-        scrollTop: $(this.hash).offset().top - 50
+        scrollTop: $(this.hash).offset().top - 60
       }, 1000, 'easeOutExpo');
 
       if ($(this).parents('.navbar-nav').length) {
@@ -50,13 +50,6 @@
 
   // Hero
   $('.hero .hero-image img').tilt();
-
-  // Skills
-  $('.skills').waypoint(function () {
-    $('.progress .progress-bar').each(function () {
-      $(this).css("width", $(this).attr("aria-valuenow") + '%');
-    });
-  }, {offset: '80%'});
 
 
   // Testimonials carousel

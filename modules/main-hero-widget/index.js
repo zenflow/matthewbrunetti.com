@@ -1,3 +1,4 @@
+const { mainWidgetSet } = require("../../lib/mainWidgetSet");
 module.exports = {
   extend: "@apostrophecms/widget-type",
   options: {
@@ -20,11 +21,7 @@ module.exports = {
         label: "Intro",
         type: "area",
         options: {
-          widgets: {
-            "@apostrophecms/rich-text": {},
-            "typed-text": {},
-            "button-set": {},
-          },
+          widgets: mainWidgetSet(),
         },
       },
       image: {

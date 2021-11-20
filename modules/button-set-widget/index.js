@@ -5,6 +5,11 @@ module.exports = {
   },
   fields: {
     add: {
+      isInvertedColors: {
+        label: "Inverted Colors",
+        type: "boolean",
+        def: false,
+      },
       buttons: {
         label: "Buttons",
         type: "array",

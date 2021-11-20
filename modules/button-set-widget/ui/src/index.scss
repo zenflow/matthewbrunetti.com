@@ -1,0 +1,65 @@
+.button-set-widget {
+  margin: 35px 0;
+
+  /* make position reflect computed `text-align` */
+  .wrap-a {
+    display: inline-block;
+
+    .wrap-b {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  }
+
+  .btn {
+    color: #ffffff;
+    background: var(--theme-color-primary);
+    box-shadow: inset 0 0 0 50px var(--theme-color-primary);
+    border-color: #ffffff;
+
+    &:hover {
+      color: var(--theme-color-primary);
+      background: #ffffff;
+      box-shadow: inset 0 0 0 0 var(--theme-color-primary);
+      border-color: var(--theme-color-primary);
+    }
+  }
+
+  &.inverted-colors {
+    .btn {
+      color: var(--theme-color-primary);
+      background: #ffffff;
+      box-shadow: inset 0 0 0 50px #ffffff;
+      border-color: var(--theme-color-primary);
+
+      &:hover {
+        color: #ffffff;
+        background: var(--theme-color-primary);
+        box-shadow: inset 0 0 0 0 #ffffff;
+        border-color: #ffffff;
+      }
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .button-set-widget .btn {
+    padding: 12px 30px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .button-set-widget .btn {
+    padding: 10px 15px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .button-set-widget .btn {
+    padding: 8px 10px;
+    letter-spacing: 0;
+  }
+}
