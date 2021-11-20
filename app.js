@@ -32,6 +32,7 @@ require("apostrophe")({
     article: {},
     topic: {},
     "article-page": {},
+    "section-widget-type": {},
     "typed-text-widget": {},
     "button-set-widget": {},
     "percentages-widget": {},

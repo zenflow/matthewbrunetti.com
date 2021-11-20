@@ -1,0 +1,5 @@
+{% macro render(options = {}) %}
+{% if data.widget.isLinkInNavbar %}
+<div id="{{ data.widget.name.toLowerCase() }}" style="position: relative; top: -60px"></div>
+{% endif %}
+{% endmacro %}

@@ -1,6 +1,6 @@
 const { mainWidgetSet } = require("../../lib/mainWidgetSet");
 module.exports = {
-  extend: "@apostrophecms/widget-type",
+  extend: "section-widget-type",
   options: {
     label: "Banner",
   },

@@ -1,7 +1,3 @@
-/**********************************/
-/*********** Nav Bar CSS **********/
-/**********************************/
-
 .navbar {
   position: fixed;
   top: 0;
@@ -37,6 +33,7 @@
   border-radius: 0;
   background: #f8f9fa;
 }
+
 @media (min-width: 992px) {
   .navcontainer {
     padding-top: 60px;

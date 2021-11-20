@@ -1,5 +1,5 @@
 module.exports = {
-  extend: "@apostrophecms/widget-type",
+  extend: "section-widget-type",
   options: {
     label: "Testimonials Section",
   },
