@@ -1,0 +1,114 @@
+.section-dummy-price-widget {
+  position: relative;
+  width: 100%;
+  padding: 45px 0 15px 0;
+}
+
+.section-dummy-price-widget .row {
+  padding: 0 15px;
+}
+
+.section-dummy-price-widget .col-md-4 {
+  padding: 0;
+}
+
+.section-dummy-price-widget .price-item {
+  position: relative;
+  margin-bottom: 30px;
+  background: #ffffff;
+}
+
+.section-dummy-price-widget .featured-item {
+  box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+  z-index: 1;
+}
+
+.section-dummy-price-widget .price-header,
+.section-dummy-price-widget .price-body,
+.section-dummy-price-widget .price-footer {
+  position: relative;
+  text-align: center;
+}
+
+.section-dummy-price-widget .price-header {
+  padding: 45px 0 30px 0;
+  color: #414141;
+}
+
+.section-dummy-price-widget .price-item.featured-item .price-header {
+  color: var(--theme-color-primary);
+}
+
+.section-dummy-price-widget .price-title h2 {
+  font-size: 25px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.section-dummy-price-widget .price-prices h2 {
+  font-size: 45px;
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+.section-dummy-price-widget .price-prices h2 small {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 9px;
+  margin-left: -12px;
+}
+
+.section-dummy-price-widget .price-prices h2 span {
+  margin-left: 1px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.section-dummy-price-widget .price-item.featured-item h2 {
+  color: var(--theme-color-primary);
+}
+
+.section-dummy-price-widget .price-body {
+  padding: 0 0 20px 0;
+}
+
+.section-dummy-price-widget .price-description ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.section-dummy-price-widget .price-description ul li {
+  padding: 0 0 20px 0;
+}
+
+.section-dummy-price-widget .price-item .price-action {
+  padding-bottom: 45px;
+}
+
+.section-dummy-price-widget .price-item .price-action .btn {
+  color: #ffffff;
+  background: #414141;
+  box-shadow: inset 0 0 0 50px #414141;
+}
+
+.section-dummy-price-widget .price-item .price-action .btn:hover {
+  color: #414141;
+  background: transparent;
+  box-shadow: inset 0 0 0 0 #414141;
+  border-color: #414141;
+}
+
+.section-dummy-price-widget .price-item.featured-item .price-action .btn {
+  color: #ffffff;
+  background: var(--theme-color-primary);
+  box-shadow: inset 0 0 0 50px var(--theme-color-primary);
+}
+
+.section-dummy-price-widget .price-item.featured-item .price-action .btn:hover {
+  color: var(--theme-color-primary);
+  background: transparent;
+  box-shadow: inset 0 0 0 0 var(--theme-color-primary);
+  border-color: var(--theme-color-primary);
+}

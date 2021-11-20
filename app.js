@@ -40,5 +40,11 @@ require("apostrophe")({
     "percentages-widget": {},
     "section-list-widget": {},
     "section-banner-widget": {},
+    "section-dummy-blog-widget": {},
+    "section-dummy-portfolio-widget": {},
+    "section-dummy-price-widget": {},
+    "section-dummy-team-widget": {},
+    "section-dummy-timeline-widget": {},
+    "section-dummy-contact-widget": {},
   },
 });

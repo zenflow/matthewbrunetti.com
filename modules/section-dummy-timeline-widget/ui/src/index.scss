@@ -1,0 +1,171 @@
+.section-dummy-timeline-widget {
+  position: relative;
+  padding: 45px 0 15px 0;
+}
+
+.section-dummy-timeline-widget .timeline {
+  position: relative;
+  width: 100%;
+}
+
+.section-dummy-timeline-widget .timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: var(--theme-color-primary);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.section-dummy-timeline-widget .timeline .timeline-item {
+  position: relative;
+  background: inherit;
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+.section-dummy-timeline-widget .timeline .timeline-item.left {
+  left: 0;
+  padding-right: 30px;
+}
+
+.section-dummy-timeline-widget .timeline .timeline-item.right {
+  left: 50%;
+  padding-left: 30px;
+}
+
+.section-dummy-timeline-widget .timeline .timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 48px;
+  right: -8px;
+  background: #ffffff;
+  border: 2px solid var(--theme-color-primary);
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.section-dummy-timeline-widget .timeline .timeline-item.right::after {
+  left: -8px;
+}
+
+.section-dummy-timeline-widget .timeline .timeline-item::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 46px;
+  right: 10px;
+  z-index: 1;
+  border: 10px solid;
+  border-color: transparent transparent transparent #dddddd;
+}
+
+.section-dummy-timeline-widget .timeline .timeline-item.right::before {
+  left: 10px;
+  border-color: transparent #dddddd transparent transparent;
+}
+
+.section-dummy-timeline-widget .timeline .timeline-date {
+  position: absolute;
+  width: 100%;
+  top: 44px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--theme-color-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+}
+
+.section-dummy-timeline-widget .timeline .timeline-item.left .timeline-date {
+  text-align: left;
+  left: calc(100% + 55px);
+}
+
+.section-dummy-timeline-widget .timeline .timeline-item.right .timeline-date {
+  text-align: right;
+  right: calc(100% + 55px);
+}
+
+.section-dummy-timeline-widget .timeline .timeline-text {
+  padding: 30px;
+  background: #ffffff;
+  position: relative;
+  border-right: 5px solid #dddddd;
+  box-shadow: 0 0 60px rgba(0, 0, 0, .08);
+}
+
+.section-dummy-timeline-widget .timeline .timeline-item.right .timeline-text {
+  border-right: none;
+  border-left: 5px solid #dddddd;
+}
+
+.section-dummy-timeline-widget .timeline .timeline-text h2 {
+  margin: 0 0 5px 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.section-dummy-timeline-widget .timeline .timeline-text h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.section-dummy-timeline-widget .timeline .timeline-text p {
+  margin: 0;
+  font-size: 16px;
+}
+
+@media (max-width: 767.98px) {
+  .section-dummy-timeline-widget .timeline::after {
+    left: 8px;
+  }
+
+  .section-dummy-timeline-widget .timeline .timeline-item {
+    width: 100%;
+    padding-left: 38px;
+  }
+
+  .section-dummy-timeline-widget .timeline .timeline-item.left {
+    padding-right: 0;
+  }
+
+  .section-dummy-timeline-widget .timeline .timeline-item.right {
+    left: 0%;
+    padding-left: 38px;
+  }
+
+  .section-dummy-timeline-widget .timeline .timeline-item.left::after,
+  .section-dummy-timeline-widget .timeline .timeline-item.right::after {
+    left: 0;
+  }
+
+  .section-dummy-timeline-widget .timeline .timeline-item.left::before,
+  .section-dummy-timeline-widget .timeline .timeline-item.right::before {
+    left: 18px;
+    border-color: transparent #dddddd transparent transparent;
+  }
+
+  .section-dummy-timeline-widget .timeline .timeline-item.left .timeline-date,
+  .section-dummy-timeline-widget .timeline .timeline-item.right .timeline-date {
+    position: relative;
+    top: 0;
+    right: auto;
+    left: 0;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  .section-dummy-timeline-widget .timeline .timeline-item.left .timeline-text,
+  .section-dummy-timeline-widget .timeline .timeline-item.right .timeline-text {
+    border-right: none;
+    border-left: 5px solid #dddddd;
+  }
+}
