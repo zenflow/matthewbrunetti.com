@@ -1,0 +1,132 @@
+.section-hero-widget {
+  position: relative;
+  width: 100%;
+  padding: 120px 0 0 0;
+  overflow: hidden;
+  background: linear-gradient(rgba(var(--theme-color-primary-rgb), .85), rgba(var(--theme-color-primary-rgb), .85)), var(--hero-background-texture);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .container-fluid {
+    padding: 0;
+  }
+
+  .hero-image {
+    position: relative;
+    text-align: right;
+    padding-bottom: 50px;
+
+    img {
+      border-radius: 1rem;
+      max-width: 66%;
+      max-height: 66%;
+    }
+  }
+
+  .hero-content {
+    position: relative;
+    padding-left: 75px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .hero-text {
+    font-size: 35px;
+    font-weight: 300;
+    color: #ffffff;
+
+    p {
+      color: #ffffff;
+      font-size: 25px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      color: #ffffff;
+      font-size: 60px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      margin: 0;
+      height: 35px;
+      color: #ffffff;
+      font-size: 35px;
+      font-weight: 600;
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .section-hero-widget {
+    .hero-content {
+      padding: 0 15px;
+    }
+
+    .hero-text {
+      p {
+        font-size: 20px;
+      }
+
+      h1 {
+        font-size: 45px;
+      }
+
+      h2 {
+        font-size: 25px;
+        height: 25px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .section-hero-widget {
+    padding-bottom: 60px;
+
+    &, .hero-text {
+      width: 100%;
+      text-align: center;
+    }
+
+    .hero-text {
+      p {
+        font-size: 18px;
+      }
+
+      h1 {
+        font-size: 35px;
+      }
+
+      h2 {
+        font-size: 22px;
+        height: 22px;
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .section-hero-widget {
+    .hero-text {
+      p {
+        font-size: 16px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      h2 {
+        font-size: 18px;
+        height: 18px;
+      }
+    }
+  }
+}

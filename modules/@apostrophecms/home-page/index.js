@@ -9,7 +9,7 @@ module.exports = {
         type: "area",
         options: {
           widgets: {
-            "main-hero": {},
+            "section-hero": {},
             "section-generic": {},
             "section-list": {},
             "section-banner": {},

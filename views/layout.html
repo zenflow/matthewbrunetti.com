@@ -16,15 +16,13 @@
 
 <!-- --- --- --- --- --- --- --- -->
 
-{% block extraHead %}
+{% block startHead %}
 <link href="/asset/img/favicon.ico" rel="icon">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 <link href="/asset/lib/animate/animate.compat.css" rel="stylesheet">
 <link href="/asset/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-<link href="/asset/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-<link href="/asset/css/style.css" rel="stylesheet">
 {% endblock %}
 
 <!-- --- --- --- --- --- --- --- -->
@@ -120,7 +118,7 @@
 <!-- --- --- --- --- --- --- --- -->
 
 {% block extraBody %}
-<script>Object.assign(document.body.dataset, { spy: 'scroll', target: '.navbar', offset: '51' })</script>
+<script>Object.assign(document.body.dataset, { spy: 'scroll', target: '.navbar', offset: '59' })</script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 <script src="/asset/lib/easing/easing.min.js"></script>
@@ -129,9 +127,7 @@
 <script src="/asset/lib/typed/typed.min.js"></script>
 <script src="/asset/lib/owlcarousel/owl.carousel.min.js"></script>
 <script src="/asset/lib/isotope/isotope.pkgd.min.js"></script>
-<script src="/asset/lib/lightbox/js/lightbox.min.js"></script>
 <script src="/asset/lib/tilt/tilt.jquery.min.js"></script>
-<script src="/asset/js/main.js"></script>
 {% if apos.helper.isDev() %}
 <script>
   window.data = {{ apos.helper.jsonStringify(data) | safe }};
