@@ -2,7 +2,6 @@
   position: relative;
   width: 100%;
   padding: 120px 0 0 0;
-  overflow: hidden;
   background: linear-gradient(rgba(var(--theme-color-primary-rgb), .85), rgba(var(--theme-color-primary-rgb), .85)), var(--hero-background-texture);
   background-position: center;
   background-repeat: no-repeat;
@@ -34,7 +33,7 @@
   }
 
   .hero-text {
-    font-size: 35px;
+    width: 100%;
     font-weight: 300;
     color: #ffffff;
 
