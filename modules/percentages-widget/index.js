@@ -8,7 +8,7 @@ module.exports = {
       items: {
         label: "Items",
         type: "array",
-        def: [],
+        min: 1,
         titleField: "label",
         fields: {
           add: {

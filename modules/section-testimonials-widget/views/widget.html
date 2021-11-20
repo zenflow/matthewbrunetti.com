@@ -1,0 +1,24 @@
+<div class="section-testimonials-widget wow fadeInUp" data-wow-delay="0.1s" id="review">
+  <div class="container">
+    <div class="testimonial-icon">
+      <i class="fa fa-quote-left"></i>
+    </div>
+    <div class="owl-carousel testimonials-carousel">
+      {% for item in data.widget.testimonials %}
+      <div class="testimonial-item">
+        {% set photo = apos.attachment.first(item._personPhoto) %}
+        {% if photo %}
+        <div class="testimonial-img">
+          <img src="{{ apos.attachment.url(photo) }}" alt="{{ photo._alt }}" />
+        </div>
+        {% endif %}
+        <div class="testimonial-text" {% if photo %}  style="padding-top: 65px" {% endif %}>
+          <p>{{ item.quote }}</p>
+          <h3>{{ item.personName }}</h3>
+          <h4>{{ item.personTitle }}</h4>
+        </div>
+      </div>
+      {% endfor %} >
+    </div>
+  </div>
+</div>

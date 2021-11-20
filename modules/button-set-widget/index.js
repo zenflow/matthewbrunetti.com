@@ -13,7 +13,7 @@ module.exports = {
       buttons: {
         label: "Buttons",
         type: "array",
-        def: [],
+        min: 1,
         titleField: "text",
         fields: {
           add: {
