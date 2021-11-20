@@ -1,7 +1,5 @@
 # TODO
 
-- remove unused modules, & template cruft
+- remove cruft
 - add public/img/favicon.ico
 - use morph-text-widget in hero instead of typed-text-widget
-- field for animate.css animation styles
--

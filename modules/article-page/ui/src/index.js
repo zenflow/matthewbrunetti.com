@@ -1,8 +1,4 @@
-import $ from "jquery";
-import Isotope from "isotope-layout";
-import jQueryBridget from "jquery-bridget";
-
-jQueryBridget("isotope", Isotope, $);
+/* global $ */
 
 export default function articlePageInit() {
   $(".article-index").each(function () {
