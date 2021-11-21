@@ -1,0 +1,34 @@
+.block-percentages-widget {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .block-percentages-widget__item {
+    .block-percentages-widget__text {
+      p {
+        display: inline-block;
+        margin-bottom: 5px;
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      p:last-child {
+        float: right;
+      }
+    }
+
+    .block-percentages-widget__bar {
+      border-radius: 10px;
+      background: #dddddd;
+
+      .progress-bar {
+        height: 10px;
+        width: 0px;
+        background: var(--theme-color-primary);
+        border-radius: 10px;
+        transition: 2s;
+      }
+    }
+  }
+}

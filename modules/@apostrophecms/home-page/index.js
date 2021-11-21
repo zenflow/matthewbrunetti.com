@@ -1,3 +1,5 @@
+const { sectionWidgetSet } = require("../../../lib/widgetSets");
+
 module.exports = {
   options: {
     label: "Home Page",
@@ -8,19 +10,7 @@ module.exports = {
         label: "Content",
         type: "area",
         options: {
-          widgets: {
-            "section-hero": {},
-            "section-generic": {},
-            "section-list": {},
-            "section-banner": {},
-            "section-testimonials": {},
-            "section-dummy-blog": {},
-            "section-dummy-portfolio": {},
-            "section-dummy-price": {},
-            "section-dummy-team": {},
-            "section-dummy-timeline": {},
-            "section-dummy-contact": {},
-          },
+          widgets: sectionWidgetSet(),
         },
       },
     },

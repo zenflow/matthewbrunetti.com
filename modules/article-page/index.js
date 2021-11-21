@@ -1,4 +1,4 @@
-const { defaultWidgets } = require("../../lib/defaultWidgets");
+const { blockWidgetSet } = require("../../lib/widgetSets");
 
 module.exports = {
   extend: "@apostrophecms/piece-page-type",
@@ -13,7 +13,7 @@ module.exports = {
         label: "Intro",
         type: "area",
         options: {
-          widgets: defaultWidgets(),
+          widgets: blockWidgetSet(),
         },
       },
     },

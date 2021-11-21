@@ -1,4 +1,5 @@
-const { mainWidgetSet } = require("../../lib/mainWidgetSet");
+const { blockWidgetSet } = require("../../lib/widgetSets");
+
 module.exports = {
   extend: "section-widget-type",
   options: {
@@ -45,7 +46,7 @@ module.exports = {
         label: "Content",
         type: "area",
         options: {
-          widgets: mainWidgetSet(),
+          widgets: blockWidgetSet(),
         },
       },
     },

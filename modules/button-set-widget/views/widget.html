@@ -1,9 +1,0 @@
-<div class="button-set-widget{% if data.widget.isInvertedColors %} inverted-colors{% endif %}">
-  <div class="wrap-a">
-    <div class="wrap-b">
-      {% for button in data.widget.buttons %}
-      <a class="btn" href="{{button.url}}" target="{{button.target}}">{{button.text}}</a>
-      {% endfor %}
-    </div>
-  </div>
-</div>
