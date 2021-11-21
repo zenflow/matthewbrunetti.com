@@ -9,7 +9,7 @@ module.exports = {
         label: "Text",
         help: "Comma-separated list of strings",
         type: "string",
-        def: "Software Engineer,Web Developer,Programming Coach",
+        required: true,
       },
       tag: {
         label: "Tag",

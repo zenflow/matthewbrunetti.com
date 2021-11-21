@@ -11,6 +11,7 @@
   transition: ease-out 0.3s;
 
   &:focus {
+    outline: 2px solid black;
     box-shadow: none;
   }
 
