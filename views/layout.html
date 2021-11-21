@@ -126,7 +126,10 @@
 <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/tilt.js@1.2.1/dest/tilt.jquery.min.js"></script>
-<script>window.isEdit = {{ data.edit }};</script>
+<script>
+  window.isLayout = true;
+  window.isEdit = {{ not not data.edit }};
+</script>
 {% if apos.helper.isDev() %}
 <script>
   window.data = {{ apos.helper.jsonStringify(data) | safe }};

@@ -1,6 +1,8 @@
 /* global WOW, $ */
 
 export default function main() {
+  if (!window.isLayout) return;
+
   // Initiate the wowjs
   new WOW().init();
 

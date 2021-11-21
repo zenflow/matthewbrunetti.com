@@ -1,6 +1,7 @@
 /* global $ */
 
-export default function articlePageInit() {
+export default function main() {
+  if (!window.isLayout) return;
   $(".article-index").each(function () {
     const $self = $(this);
     $(document).ready(updateArticleListItems);
