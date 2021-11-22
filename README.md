@@ -64,7 +64,7 @@ To set up:
 2. Create a branch named `backup/prod` and push it to GitHub.
 3. Add repository secrets on GitHub under Settings > Secrets > New repository secret:
    1. `MONGODB_URI` - e.g. `mongodb://username:password@example.com:27017/databasename?authSource=admin`
-   2. `UPLOADS_DIR` - e.g. `username:password@example.com:22/path/to/public/uploads` (username and password are for SSH)
+   2. `UPLOADS_DIR` - e.g. `username:password@example.com:/path/to/public/uploads` (username and password are for SSH)
 
 To trigger a backup on-demand, go to your project "Actions", select "Back up prod" from the list of workflows,
 click the "Run workflow" dropdown, and click the "Run workflow" button.
