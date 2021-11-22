@@ -1,8 +1,8 @@
 name: Back up prod
 on:
   workflow_dispatch:
-#  schedule:
-#    - cron: '59 23 * * *' # last minute of every day (UTC time zone)
+  schedule:
+    - cron: '59 23 * * *' # last minute of every day (UTC time zone)
 jobs:
   main:
     runs-on: ubuntu-latest
