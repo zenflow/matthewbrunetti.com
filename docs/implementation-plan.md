@@ -43,7 +43,7 @@ Goals:
 
 Deliverables:
 
-- `src/content/config.ts`
+- `src/content.config.ts`
 - `src/content/site/global.json`
 - `src/content/site/home.json`
 - `src/content/site/blog.json`

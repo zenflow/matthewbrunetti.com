@@ -1,0 +1,84 @@
+---
+import '../styles/global.css';
+
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  title?: string;
+  description?: string;
+  fancyNavbar?: boolean;
+  navItems?: NavItem[];
+}
+
+const {
+  title = 'Matthew Brunetti',
+  description = 'Personal website of Matthew Brunetti.',
+  fancyNavbar = false,
+  navItems = [],
+} = Astro.props;
+
+const pageTitle = title === 'Matthew Brunetti' ? title : `${title} | Matthew Brunetti`;
+const navClassName = [
+  'navcontainer',
+  'navcontainer-scrolledtotop',
+  fancyNavbar ? 'navcontainer-fancy' : '',
+]
+  .filter(Boolean)
+  .join(' ');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{pageTitle}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="top" class="main-wrapper">
+      <div class={navClassName}>
+        <header class="navbar-shell">
+          <nav class="navbar">
+            <a href="/" class="navbar-brand">Matthew Brunetti</a>
+            {navItems.length > 0 && (
+              <div class="navbar-nav" aria-label="Primary">
+                {navItems.map((item) => (
+                  <a href={item.href} class="nav-item nav-link">
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </nav>
+        </header>
+      </div>
+
+      <main>
+        <slot />
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <h2>Matthew Brunetti</h2>
+        <h3>Full-Stack Software Engineer</h3>
+        <div class="footer-menu">
+          <a href="tel:+17052109826">+1-705-210-9826</a>
+          <a href="mailto:zenflow87@gmail.com">zenflow87@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+
+    <a class="btn back-to-top" href="#top">Top</a>
+  </body>
+</html>

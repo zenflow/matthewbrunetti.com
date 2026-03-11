@@ -1,0 +1,32 @@
+{
+  "name": "matthewbrunetti.com",
+  "version": "1.0.0",
+  "description": "Static Astro rewrite of matthewbrunetti.com",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zenflow/matthewbrunetti.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/zenflow/matthewbrunetti.com/issues"
+  },
+  "homepage": "https://github.com/zenflow/matthewbrunetti.com#readme",
+  "dependencies": {
+    "astro": "^6.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.4.0",
+    "typescript": "^5.9.3"
+  },
+  "private": true
+}

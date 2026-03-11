@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const navItems = [
+  { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
+  { label: 'Services', href: '#services' },
+];
+---
+
+<BaseLayout
+  title="Matthew Brunetti"
+  description="Static Astro rebuild in progress for matthewbrunetti.com."
+  fancyNavbar={true}
+  navItems={navItems}
+>
+  <section id="home" class="section-placeholder section-hero-widget">
+    <div class="container narrow split-layout">
+      <div>
+        <p class="eyebrow">Phase 1</p>
+        <h1>Astro scaffold is in place.</h1>
+        <p>
+          The home page structure, content importer, and parity work come next. This page currently exists
+          to verify the new Astro app shell, routes, and shared layout.
+        </p>
+      </div>
+      <div class="placeholder-card">
+        <strong>Next up</strong>
+        <p>Import the legacy home page content from BSON and replace these placeholders with real sections.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section-placeholder section-generic-widget">
+    <div class="container narrow">
+      <div class="section-header">
+        <p>About</p>
+        <h2>Content collections come next</h2>
+      </div>
+      <p>
+        Phase 2 will define the site content model. Phase 3 will import the legacy home page, global settings,
+        and image metadata into repo-managed content files.
+      </p>
+    </div>
+  </section>
+
+  <section id="services" class="section-placeholder section-list-widget">
+    <div class="container narrow">
+      <div class="section-header">
+        <p>Services</p>
+        <h2>Renderer work follows the importer</h2>
+      </div>
+      <div class="placeholder-grid">
+        <article class="placeholder-card">
+          <strong>Section components</strong>
+          <p>`section-hero`, `section-generic`, and `section-list`.</p>
+        </article>
+        <article class="placeholder-card">
+          <strong>Block components</strong>
+          <p>Rich text, images, buttons, typed text, and percentages.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

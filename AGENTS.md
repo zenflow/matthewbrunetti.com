@@ -10,6 +10,20 @@ This repo is migrating `www.matthewbrunetti.com` from ApostropheCMS to Astro.
 - Mirror the legacy blog architecture, but do not overbuild it. There are no published blog posts in the current dump.
 - Leave Vercel deployment for the final phase, after implementation and validation.
 
+## Execution Tracker
+
+Use `docs/progress.md` as the current status board and update it whenever a major execution step is completed.
+
+- [x] 1. Scaffold Astro, TypeScript, and base layout.
+- [ ] 2. Add content schemas and placeholder content files.
+- [ ] 3. Build a repeatable importer from BSON + uploads into repo-managed content.
+- [ ] 4. Implement section/block renderers for the real home page content.
+- [ ] 5. Match the home page structure, styling, anchors, and key motion closely.
+- [ ] 6. Add `/blog/` and future-ready post support.
+- [ ] 7. Add metadata, sitemap, redirects, and asset validation.
+- [ ] 8. Do final parity review.
+- [ ] 9. Configure Vercel last.
+
 ## Current Repo State
 
 - `legacy/` contains the old ApostropheCMS project and must be treated as read-only reference material.
@@ -125,18 +139,6 @@ Defer unless needed later:
 - `block-container`
 - all `section-dummy-*` widgets
 
-## Recommended Execution Order
-
-1. Scaffold Astro, TypeScript, and base layout.
-2. Add content schemas and placeholder content files.
-3. Build a repeatable importer from BSON + uploads into repo-managed content.
-4. Implement section/block renderers for the real home page content.
-5. Match the home page structure, styling, anchors, and key motion closely.
-6. Add `/blog/` and future-ready post support.
-7. Add metadata, sitemap, redirects, and asset validation.
-8. Do final parity review.
-9. Configure Vercel last.
-
 ## Done Criteria For Implementation
 
 - `legacy/` remains untouched.
@@ -152,6 +154,7 @@ Defer unless needed later:
 
 - Before major implementation work, read:
   - `AGENTS.md`
+  - `docs/progress.md`
   - `docs/legacy-audit.md`
   - `docs/content-model.md`
   - `docs/route-parity.md`

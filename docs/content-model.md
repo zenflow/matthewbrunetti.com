@@ -15,13 +15,13 @@ This document defines the target Astro content model for the migration.
 ```text
 src/
   content/
-    config.ts
     site/
       global.json
       home.json
       blog.json
     blog/
       *.mdx
+  content.config.ts
   assets/
     legacy/
       *.jpg
