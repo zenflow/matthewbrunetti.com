@@ -16,7 +16,7 @@ Use `docs/progress.md` as the current status board and update it whenever a majo
 
 - [x] 1. Scaffold Astro, TypeScript, and base layout.
 - [x] 2. Add content schemas and placeholder content files.
-- [ ] 3. Build a repeatable importer from BSON + uploads into repo-managed content.
+- [ ] 3. Migrate legacy images into Astro assets and add path-based asset resolution.
 - [ ] 4. Implement section/block renderers for the real home page content.
 - [ ] 5. Match the home page structure, styling, anchors, and key motion closely.
 - [ ] 6. Add `/blog/` and future-ready post support.
@@ -70,7 +70,7 @@ Implement first:
 - Home page with close structural parity
 - Global nav, footer, contact links, and anchor navigation
 - Blog landing page route and future post architecture
-- Content importer that converts legacy BSON + uploads into repo-managed content files
+- One-time migration of legacy image originals into Astro-managed local assets
 - Basic SEO, sitemap, and static redirects once pages work
 
 Do not prioritize in v1:
@@ -91,6 +91,8 @@ Do not prioritize in v1:
 - Preserve important legacy CSS class names on the home page when that reduces migration risk.
 - Treat Apostrophe rich text as trusted imported HTML in v1 instead of converting it to Markdown.
 - Copy only canonical image originals into the Astro app; do not carry forward Apostrophe size variants unless needed.
+- Prefer path-based image references in repo-managed content over legacy Apostrophe image IDs.
+- Use Astro's built-in `astro:assets` pipeline for optimized image delivery.
 - Keep deployment tasks separate and last.
 
 ## Target Architecture
@@ -103,8 +105,9 @@ Do not prioritize in v1:
   - `src/content/site/home.json`
   - `src/content/site/blog.json`
   - `src/content/blog/*.mdx`
-  - `src/assets/legacy/`
-  - `src/lib/generated/`
+  - `src/assets/site/legacy/`
+  - `src/assets/site/`
+  - `src/lib/assets/`
   - `scripts/`
 
 ## Routes To Support
@@ -157,6 +160,7 @@ Defer unless needed later:
   - `docs/progress.md`
   - `docs/legacy-audit.md`
   - `docs/content-model.md`
+  - `docs/image-strategy.md`
   - `docs/route-parity.md`
   - `docs/home-parity-notes.md`
   - `docs/implementation-plan.md`

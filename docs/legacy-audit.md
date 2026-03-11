@@ -71,7 +71,7 @@ Recommended migration behavior:
 
 - copy only the canonical originals
 - let Astro generate optimized output later
-- keep attachment IDs available in the generated manifest for reliable mapping
+- convert content references to local asset paths after the one-time media migration
 
 ## Published Global Content
 
@@ -173,6 +173,7 @@ Important behaviors to preserve or intentionally re-create:
 
 - Apostrophe admin/editor features
 - MongoDB runtime or restore flow
+- a permanent BSON importer pipeline
 - form submission history
 - unused dummy sections (`section-dummy-*`)
 - unused widgets not present in published content

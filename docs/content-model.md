@@ -9,6 +9,7 @@ This document defines the target Astro content model for the migration.
 - Preserve rich text as HTML strings in v1.
 - Keep blog support future-ready, but lean.
 - Prefer explicit generated data over runtime lookups.
+- Prefer local asset paths over legacy image IDs for ongoing editing.
 
 ## Proposed Target Structure
 
@@ -23,14 +24,14 @@ src/
       *.mdx
   content.config.ts
   assets/
-    legacy/
+    site/
+      legacy/
+      blog/
       *.jpg
   lib/
-    generated/
-      legacy-media.ts
-      legacy-import-report.json
+    assets/
 scripts/
-  import-legacy-content.mjs
+  migrate-legacy-media.mjs
 ```
 
 ## Site Singletons
@@ -128,7 +129,7 @@ legacyId: null
 
 ### `section-hero`
 
-Suggested imported shape:
+Suggested shape:
 
 ```json
 {
@@ -136,7 +137,7 @@ Suggested imported shape:
   "name": "Home",
   "isLinkInNavbar": true,
   "isFixedBackground": true,
-  "textureImage": "legacy-image-id",
+  "textureImage": "legacy/triangles-texture.jpg",
   "intro": [],
   "image": []
 }
@@ -190,13 +191,13 @@ Suggested shape:
 
 ### `@apostrophecms/image`
 
-- store mapped image reference plus alt/title metadata
+- store a local asset path plus alt metadata
 - render through a single Astro image wrapper
 
 Suggested shape:
 
 ```json
-{ "type": "image", "imageId": "legacy-image-doc-or-attachment-id" }
+{ "type": "image", "src": "legacy/matt-profile.jpg", "alt": "Matthew's profile picture" }
 ```
 
 ### `block-button-set`
@@ -240,38 +241,38 @@ Suggested shape:
 
 ## Media Model
 
-Generate a media manifest from the legacy image docs and attachment originals.
+Use local Astro-managed assets as the long-term image source.
 
-Suggested generated record shape:
+Legacy-media migration should:
+
+- copy canonical original files only
+- rename them to stable editor-friendly filenames where practical
+- preserve alt text if present
+- fall back to image title if alt is empty
+- convert existing content references from legacy IDs to local asset paths
+
+Optional helper data can be generated during migration, but the source of truth after migration should remain the local asset path stored in repo content files.
+
+Suggested helper record shape if needed:
 
 ```ts
-type LegacyMediaItem = {
-  imageDocId: string;
-  attachmentId: string;
-  slug: string;
-  title: string;
+type LegacyMediaMapItem = {
+  legacyImageId: string;
+  legacyAttachmentId: string;
+  src: string;
   alt: string;
   width: number;
   height: number;
-  filename: string;
-  importPath: string;
 };
 ```
 
-Rules:
+## Migration Rules
 
-- use canonical original files only
-- preserve alt text if present
-- fall back to image title if alt is empty
-- keep attachment and doc IDs so imported content can reference them deterministically
-
-## Import Rules
-
-- import only `en:published` docs
-- ignore draft and previous variants
-- ignore operational collections (`sessions`, cache, locks, notifications)
+- use the already migrated repo-managed JSON content as the ongoing source of truth
+- migrate legacy images once from `legacy/public/uploads/attachments/`
 - preserve section order exactly
 - normalize section anchor IDs from section names using predictable slugification
+- prefer local image paths in content over legacy IDs after media migration
 
 ## Rendering Strategy
 

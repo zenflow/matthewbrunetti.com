@@ -6,7 +6,7 @@ This document breaks the migration into execution phases that are small enough t
 
 - Build the new Astro app in small, verifiable slices.
 - Make the home page work end-to-end first.
-- Keep the migration importer repeatable so content can be regenerated if needed.
+- Keep the migration path lightweight and aligned with the final repo-editing workflow.
 - Defer deployment until the site is implemented and reviewed locally.
 
 ## Phase 1: Scaffold Astro At Repo Root
@@ -54,26 +54,26 @@ Acceptance criteria:
 - collection validation passes
 - routes can load typed content without importer output yet
 
-## Phase 3: Build Legacy Importer
+## Phase 3: Migrate Legacy Images And Asset References
 
 Goals:
 
-- read BSON and uploads directly from `legacy/`
-- normalize published Apostrophe docs into the target Astro content model
-- generate a media manifest and copy canonical originals
+- copy legacy canonical image originals into Astro-managed local assets
+- map existing content image references from legacy IDs to local asset paths
+- establish the long-term image workflow for new content
 
 Deliverables:
 
-- `scripts/import-legacy-content.mjs`
-- generated content files
-- generated media manifest
-- generated import report for auditing
+- migrated files under `src/assets/site/legacy/`
+- updated image references in repo-managed content files
+- optional helper asset map if it makes rendering easier
+- shared image-resolution utilities or components as needed
 
 Acceptance criteria:
 
-- importer is repeatable
-- imported home content matches the published dump
+- all home-page image references resolve to local Astro assets
 - all referenced images resolve to copied originals
+- the resulting workflow for new images is path-based and editor-friendly
 
 ## Phase 4: Implement Home Page Renderer
 
@@ -176,7 +176,7 @@ Use implementation slices that are easy to review and easy to resume:
 
 1. scaffold and build
 2. content schemas
-3. importer
+3. media migration
 4. home renderer
 5. blog routes
 6. SEO and compatibility
