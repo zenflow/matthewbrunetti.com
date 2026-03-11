@@ -1,5 +1,7 @@
 ---
+import SiteImage from '../components/SiteImage.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { resolveSiteAssetUrl } from '../lib/assets/site-assets';
 import { getHomeNavItems, getSiteGlobal, getSiteHome } from '../lib/content';
 
 const site = await getSiteGlobal();
@@ -14,6 +16,13 @@ if (!hero) {
   throw new Error('Home page content is missing the hero section.');
 }
 
+function getImageBlock(blocks: Array<{ type: string; [key: string]: unknown }>) {
+  return blocks.find(
+    (block): block is { type: 'image'; src: string; alt: string } =>
+      block.type === 'image' && typeof block.src === 'string' && typeof block.alt === 'string',
+  );
+}
+
 const totalBlocks = home.sections.reduce((count, section) => {
   if (section.type === 'hero') {
     return count + section.intro.length + section.image.length;
@@ -25,6 +34,11 @@ const totalBlocks = home.sections.reduce((count, section) => {
 
   return count + section.items.reduce((itemCount, item) => itemCount + item.description.length, 0);
 }, 0);
+
+const heroImage = getImageBlock(hero.image);
+const heroStyle = hero.textureImage
+  ? `--hero-background-texture: url(${resolveSiteAssetUrl(hero.textureImage)});`
+  : undefined;
 ---
 
 <BaseLayout
@@ -34,15 +48,14 @@ const totalBlocks = home.sections.reduce((count, section) => {
   fancyNavbar={home.fancyNavbar}
   navItems={navItems}
 >
-  <section id={hero.anchorId} class="section-placeholder section-hero-widget">
+  <section id={hero.anchorId} class="section-placeholder section-hero-widget" style={heroStyle}>
     <div class="container narrow split-layout">
       <div>
-        <p class="eyebrow">Phase 2</p>
-        <h1>Typed content collections are wired up.</h1>
+        <p class="eyebrow">Phase 3</p>
+        <h1>Legacy images now resolve from local Astro assets.</h1>
         <p>
-          The home page now reads schema-validated content from `src/content/site/home.json` and
-          `src/content/site/global.json`. Phase 3 will replace the hand-authored files with generated output from
-          the legacy BSON dump.
+          The home page content now references editor-friendly local asset paths under `src/assets/site/legacy/`
+          instead of legacy Apostrophe image IDs. The next phase can focus purely on rendering.
         </p>
         <div class="pill-list">
           <span>{home.sections.length} sections</span>
@@ -51,9 +64,10 @@ const totalBlocks = home.sections.reduce((count, section) => {
         </div>
       </div>
       <div class="placeholder-card">
-        <strong>Current home schema</strong>
+        <strong>Resolved hero asset</strong>
         <p>Hero anchor: `#{hero.anchorId}`</p>
-        <p>{hero.intro.length} intro blocks, {hero.image.length} image block, fixed background enabled.</p>
+        <p>{hero.textureImage}</p>
+        {heroImage && <SiteImage src={heroImage.src} alt={heroImage.alt} class="section-photo hero-photo" loading="eager" />}
       </div>
     </div>
   </section>
@@ -67,11 +81,18 @@ const totalBlocks = home.sections.reduce((count, section) => {
         </div>
         <div class="placeholder-grid">
           <article class="placeholder-card">
-            <strong>Generic section schema</strong>
+            <strong>Generic section asset path</strong>
             <p>
               {section.main.length} main blocks, {section.image.length} image block, image position{' '}
               `{section.imagePosition}`.
             </p>
+            {getImageBlock(section.image) && (
+              <SiteImage
+                src={getImageBlock(section.image)!.src}
+                alt={getImageBlock(section.image)!.alt}
+                class="section-photo"
+              />
+            )}
           </article>
           <article class="placeholder-card">
             <strong>Next implementation step</strong>

@@ -134,7 +134,11 @@ p {
 .section-hero-widget {
   padding: 9rem 0 6rem;
   color: #ffffff;
-  background: linear-gradient(rgba(var(--theme-color-primary-rgb), 0.9), rgba(var(--theme-color-primary-rgb), 0.82));
+  background: linear-gradient(rgba(var(--theme-color-primary-rgb), 0.9), rgba(var(--theme-color-primary-rgb), 0.82)),
+    var(--hero-background-texture, none);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .section-hero-widget h1,
@@ -234,6 +238,19 @@ p {
 .section-list-widget .placeholder-card,
 .page-shell .placeholder-card {
   background: #ffffff;
+}
+
+.section-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 1rem;
+}
+
+.hero-photo {
+  max-width: 320px;
+  margin-inline: auto;
 }
 
 .footer {

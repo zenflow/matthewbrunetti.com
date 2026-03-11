@@ -9,7 +9,7 @@
       "anchorId": "home",
       "isLinkInNavbar": true,
       "isFixedBackground": true,
-      "textureImage": "ckw8bdm3e00102sunq42to5cb:en:published",
+      "textureImage": "legacy/triangles-texture.jpg",
       "intro": [
         {
           "type": "richText",
@@ -40,7 +40,8 @@
       "image": [
         {
           "type": "image",
-          "imageId": "ckw8bj203002m2sun52u73kle:en:published"
+          "src": "legacy/matt-profile.jpg",
+          "alt": "Matthew's profile picture"
         }
       ]
     },
@@ -110,7 +111,8 @@
       "image": [
         {
           "type": "image",
-          "imageId": "ckw8c0fdl00962sunt7m69xy9:en:published"
+          "src": "legacy/photo-of-matthew-1.jpg",
+          "alt": "Photo of Matthew"
         }
       ]
     },

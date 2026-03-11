@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+import { resolveSiteAsset } from '../lib/assets/site-assets';
+
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+  loading?: 'eager' | 'lazy';
+}
+
+const { src, alt, class: className, loading = 'lazy' } = Astro.props;
+const image = resolveSiteAsset(src);
+---
+
+<Image src={image} alt={alt} class={className} loading={loading} />

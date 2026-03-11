@@ -26,7 +26,8 @@ const richTextBlockSchema = z.object({
 
 const imageBlockSchema = z.object({
   type: z.literal('image'),
-  imageId: z.string(),
+  src: z.string(),
+  alt: z.string(),
 });
 
 const buttonSetBlockSchema = z.object({

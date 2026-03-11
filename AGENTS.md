@@ -16,7 +16,7 @@ Use `docs/progress.md` as the current status board and update it whenever a majo
 
 - [x] 1. Scaffold Astro, TypeScript, and base layout.
 - [x] 2. Add content schemas and placeholder content files.
-- [ ] 3. Migrate legacy images into Astro assets and add path-based asset resolution.
+- [x] 3. Migrate legacy images into Astro assets and add path-based asset resolution.
 - [ ] 4. Implement section/block renderers for the real home page content.
 - [ ] 5. Match the home page structure, styling, anchors, and key motion closely.
 - [ ] 6. Add `/blog/` and future-ready post support.
