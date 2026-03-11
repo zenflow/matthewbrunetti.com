@@ -1,0 +1,42 @@
+---
+import type { GenericSection } from '../../lib/content';
+import BlockRenderer from '../blocks/BlockRenderer.astro';
+
+interface Props {
+  section: GenericSection;
+}
+
+const { section } = Astro.props;
+const hasImage = section.image.length > 0 && section.imagePosition !== 'none';
+const imageFirst = section.imagePosition === 'left';
+---
+
+<section id={section.anchorId} class="section-generic-widget">
+  <div class="container-fluid">
+    <div class:list={['section-generic-widget__row', { 'image-left': imageFirst, 'image-right': !imageFirst }]}>
+      {hasImage && imageFirst && (
+        <div class="section-generic-widget__img">
+          {section.image.map((block) => (
+            <BlockRenderer block={block} imageClass="section-photo generic-photo" />
+          ))}
+        </div>
+      )}
+      <div class="section-generic-widget__content" style={`text-align: ${section.textAlign};`}>
+        <div class="section-header">
+          <p>{section.heading}</p>
+          <h2>{section.title}</h2>
+        </div>
+        {section.main.map((block) => (
+          <BlockRenderer block={block} />
+        ))}
+      </div>
+      {hasImage && !imageFirst && (
+        <div class="section-generic-widget__img">
+          {section.image.map((block) => (
+            <BlockRenderer block={block} imageClass="section-photo generic-photo" />
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+</section>

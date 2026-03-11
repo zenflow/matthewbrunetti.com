@@ -1,0 +1,11 @@
+---
+import type { RichTextBlock } from '../../lib/content';
+
+interface Props {
+  block: RichTextBlock;
+}
+
+const { block } = Astro.props;
+---
+
+<div class="block-rich-text-widget" set:html={block.html} />

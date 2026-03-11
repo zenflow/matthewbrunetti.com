@@ -1,0 +1,26 @@
+---
+import type { ButtonSetBlock } from '../../lib/content';
+
+interface Props {
+  block: ButtonSetBlock;
+}
+
+const { block } = Astro.props;
+---
+
+<div class:list={['block-button-set-widget', { 'inverted-colors': block.isInvertedColors }]}>
+  <div class="wrap-a">
+    <div class="wrap-b">
+      {block.buttons.map((button) => (
+        <a
+          class="btn"
+          href={button.url}
+          target={button.target}
+          rel={button.target === '_blank' ? 'noreferrer' : undefined}
+        >
+          {button.text}
+        </a>
+      ))}
+    </div>
+  </div>
+</div>

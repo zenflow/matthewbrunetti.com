@@ -1,0 +1,14 @@
+---
+import SiteImage from '../SiteImage.astro';
+import type { ImageBlock } from '../../lib/content';
+
+interface Props {
+  block: ImageBlock;
+  class?: string;
+  loading?: 'eager' | 'lazy';
+}
+
+const { block, class: className, loading = 'lazy' } = Astro.props;
+---
+
+<SiteImage src={block.src} alt={block.alt} class={className} loading={loading} />

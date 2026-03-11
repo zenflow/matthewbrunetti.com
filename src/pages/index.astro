@@ -1,44 +1,12 @@
 ---
-import SiteImage from '../components/SiteImage.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { resolveSiteAssetUrl } from '../lib/assets/site-assets';
+import HomeEnhancements from '../components/HomeEnhancements.astro';
+import SectionRenderer from '../components/sections/SectionRenderer.astro';
 import { getHomeNavItems, getSiteGlobal, getSiteHome } from '../lib/content';
 
 const site = await getSiteGlobal();
 const home = await getSiteHome();
 const navItems = getHomeNavItems(home);
-
-const hero = home.sections.find((section) => section.type === 'hero');
-const genericSections = home.sections.filter((section) => section.type === 'generic');
-const listSections = home.sections.filter((section) => section.type === 'list');
-
-if (!hero) {
-  throw new Error('Home page content is missing the hero section.');
-}
-
-function getImageBlock(blocks: Array<{ type: string; [key: string]: unknown }>) {
-  return blocks.find(
-    (block): block is { type: 'image'; src: string; alt: string } =>
-      block.type === 'image' && typeof block.src === 'string' && typeof block.alt === 'string',
-  );
-}
-
-const totalBlocks = home.sections.reduce((count, section) => {
-  if (section.type === 'hero') {
-    return count + section.intro.length + section.image.length;
-  }
-
-  if (section.type === 'generic') {
-    return count + section.main.length + section.image.length;
-  }
-
-  return count + section.items.reduce((itemCount, item) => itemCount + item.description.length, 0);
-}, 0);
-
-const heroImage = getImageBlock(hero.image);
-const heroStyle = hero.textureImage
-  ? `--hero-background-texture: url(${resolveSiteAssetUrl(hero.textureImage)});`
-  : undefined;
 ---
 
 <BaseLayout
@@ -48,77 +16,6 @@ const heroStyle = hero.textureImage
   fancyNavbar={home.fancyNavbar}
   navItems={navItems}
 >
-  <section id={hero.anchorId} class="section-placeholder section-hero-widget" style={heroStyle}>
-    <div class="container narrow split-layout">
-      <div>
-        <p class="eyebrow">Phase 3</p>
-        <h1>Legacy images now resolve from local Astro assets.</h1>
-        <p>
-          The home page content now references editor-friendly local asset paths under `src/assets/site/legacy/`
-          instead of legacy Apostrophe image IDs. The next phase can focus purely on rendering.
-        </p>
-        <div class="pill-list">
-          <span>{home.sections.length} sections</span>
-          <span>{totalBlocks} content blocks</span>
-          <span>{site.social.length} social links</span>
-        </div>
-      </div>
-      <div class="placeholder-card">
-        <strong>Resolved hero asset</strong>
-        <p>Hero anchor: `#{hero.anchorId}`</p>
-        <p>{hero.textureImage}</p>
-        {heroImage && <SiteImage src={heroImage.src} alt={heroImage.alt} class="section-photo hero-photo" loading="eager" />}
-      </div>
-    </div>
-  </section>
-
-  {genericSections.map((section) => (
-    <section id={section.anchorId} class="section-placeholder section-generic-widget">
-      <div class="container narrow">
-        <div class="section-header">
-          <p>{section.heading}</p>
-          <h2>{section.title}</h2>
-        </div>
-        <div class="placeholder-grid">
-          <article class="placeholder-card">
-            <strong>Generic section asset path</strong>
-            <p>
-              {section.main.length} main blocks, {section.image.length} image block, image position{' '}
-              `{section.imagePosition}`.
-            </p>
-            {getImageBlock(section.image) && (
-              <SiteImage
-                src={getImageBlock(section.image)!.src}
-                alt={getImageBlock(section.image)!.alt}
-                class="section-photo"
-              />
-            )}
-          </article>
-          <article class="placeholder-card">
-            <strong>Next implementation step</strong>
-            <p>Replace this summary with the real generic-section and block renderers in Phase 4.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-  ))}
-
-  {listSections.map((section) => (
-    <section id={section.anchorId} class="section-placeholder section-list-widget">
-      <div class="container narrow">
-        <div class="section-header">
-          <p>{section.heading}</p>
-          <h2>{section.title}</h2>
-        </div>
-        <div class="placeholder-grid">
-          {section.items.map((item) => (
-            <article class="placeholder-card">
-              <strong>{item.title}</strong>
-              <p>Icon `{item.icon}` with {item.description.length} description block.</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  ))}
+  {home.sections.map((section) => <SectionRenderer section={section} />)}
+  <HomeEnhancements />
 </BaseLayout>

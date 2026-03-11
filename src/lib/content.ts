@@ -5,6 +5,22 @@ export type SiteGlobalData = CollectionEntry<'siteGlobal'>['data'];
 export type SiteHomeData = CollectionEntry<'siteHome'>['data'];
 export type SiteBlogData = CollectionEntry<'siteBlog'>['data'];
 export type BlogPostEntry = CollectionEntry<'blogPosts'>;
+export type HomeSection = SiteHomeData['sections'][number];
+export type HeroSection = Extract<HomeSection, { type: 'hero' }>;
+export type GenericSection = Extract<HomeSection, { type: 'generic' }>;
+export type ListSection = Extract<HomeSection, { type: 'list' }>;
+export type HomeListItem = ListSection['items'][number];
+export type HomeBlock =
+  | HeroSection['intro'][number]
+  | HeroSection['image'][number]
+  | GenericSection['main'][number]
+  | GenericSection['image'][number]
+  | HomeListItem['description'][number];
+export type RichTextBlock = Extract<HomeBlock, { type: 'richText' }>;
+export type ImageBlock = Extract<HomeBlock, { type: 'image' }>;
+export type ButtonSetBlock = Extract<HomeBlock, { type: 'buttonSet' }>;
+export type TypedTextBlock = Extract<HomeBlock, { type: 'typedText' }>;
+export type PercentagesBlock = Extract<HomeBlock, { type: 'percentages' }>;
 
 export type NavItem = {
   label: string;

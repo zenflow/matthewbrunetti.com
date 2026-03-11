@@ -1,0 +1,22 @@
+---
+import type { HomeBlock } from '../../lib/content';
+import ButtonSetBlock from './ButtonSetBlock.astro';
+import ImageBlock from './ImageBlock.astro';
+import PercentagesBlock from './PercentagesBlock.astro';
+import RichTextBlock from './RichTextBlock.astro';
+import TypedTextBlock from './TypedTextBlock.astro';
+
+interface Props {
+  block: HomeBlock;
+  imageClass?: string;
+  imageLoading?: 'eager' | 'lazy';
+}
+
+const { block, imageClass, imageLoading } = Astro.props;
+---
+
+{block.type === 'richText' && <RichTextBlock block={block} />}
+{block.type === 'image' && <ImageBlock block={block} class={imageClass} loading={imageLoading} />}
+{block.type === 'buttonSet' && <ButtonSetBlock block={block} />}
+{block.type === 'typedText' && <TypedTextBlock block={block} />}
+{block.type === 'percentages' && <PercentagesBlock block={block} />}

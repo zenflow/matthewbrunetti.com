@@ -1,0 +1,16 @@
+---
+import type { HomeSection } from '../../lib/content';
+import GenericSection from './GenericSection.astro';
+import HeroSection from './HeroSection.astro';
+import ListSection from './ListSection.astro';
+
+interface Props {
+  section: HomeSection;
+}
+
+const { section } = Astro.props;
+---
+
+{section.type === 'hero' && <HeroSection section={section} />}
+{section.type === 'generic' && <GenericSection section={section} />}
+{section.type === 'list' && <ListSection section={section} />}

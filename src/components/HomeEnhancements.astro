@@ -1,0 +1,109 @@
+<script is:inline>
+  const initTypedText = () => {
+    document.querySelectorAll('.block-typed-text-widget').forEach((element) => {
+      if (!(element instanceof HTMLElement) || element.dataset.ready === 'true') {
+        return;
+      }
+
+      const valueElement = element.querySelector('[data-typed-value]');
+      if (!(valueElement instanceof HTMLElement)) {
+        return;
+      }
+
+      let items;
+      try {
+        items = JSON.parse(element.dataset.typedItems || '[]');
+      } catch {
+        items = [];
+      }
+
+      if (!Array.isArray(items) || items.length === 0) {
+        return;
+      }
+
+      element.dataset.ready = 'true';
+
+      const cursor = document.createElement('span');
+      cursor.className = 'typed-cursor';
+      cursor.setAttribute('aria-hidden', 'true');
+      cursor.textContent = '|';
+      valueElement.insertAdjacentElement('afterend', cursor);
+
+      let itemIndex = 0;
+      let charIndex = items[0].length;
+      let deleting = false;
+
+      const tick = () => {
+        const current = String(items[itemIndex] || '');
+
+        if (!deleting) {
+          charIndex = Math.min(current.length, charIndex + 1);
+          valueElement.textContent = current.slice(0, charIndex);
+
+          if (charIndex === current.length) {
+            deleting = true;
+            window.setTimeout(tick, 1400);
+            return;
+          }
+
+          window.setTimeout(tick, 90);
+          return;
+        }
+
+        charIndex = Math.max(0, charIndex - 1);
+        valueElement.textContent = current.slice(0, charIndex);
+
+        if (charIndex === 0) {
+          deleting = false;
+          itemIndex = (itemIndex + 1) % items.length;
+          window.setTimeout(tick, 260);
+          return;
+        }
+
+        window.setTimeout(tick, 30);
+      };
+
+      window.setTimeout(tick, 1400);
+    });
+  };
+
+  const initPercentages = () => {
+    const blocks = document.querySelectorAll('.block-percentages-widget');
+    if (blocks.length === 0) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          const block = entry.target;
+          block.querySelectorAll('.progress-bar').forEach((bar) => {
+            if (bar instanceof HTMLElement) {
+              bar.style.width = `${bar.dataset.progressTarget || '0'}%`;
+            }
+          });
+
+          observer.unobserve(block);
+        });
+      },
+      { threshold: 0.3 },
+    );
+
+    blocks.forEach((block) => observer.observe(block));
+  };
+
+  const initHomeEnhancements = () => {
+    initTypedText();
+    initPercentages();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHomeEnhancements, { once: true });
+  } else {
+    initHomeEnhancements();
+  }
+</script>
