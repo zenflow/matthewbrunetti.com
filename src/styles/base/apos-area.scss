@@ -1,0 +1,15 @@
+/* TODO: This shouldn't be needed */
+[data-apos-area] [data-apos-area],
+[data-apos-area] [data-apos-area] [data-apos-area] {
+  margin: 0 !important;
+}
+
+/* TODO: This shouldn't be needed */
+.apos-area-widget-inner {
+  min-height: unset !important;
+}
+
+.apos-area, .apos-areas-widgets-list {
+  display: flex;
+  flex-direction: column;
+}

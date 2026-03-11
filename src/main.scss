@@ -1,0 +1,78 @@
+@use './styles/base' as *;
+@use './styles/section-hero' as *;
+@use './styles/section-generic' as *;
+@use './styles/section-list' as *;
+@use './styles/block-button-set' as *;
+@use './styles/block-percentages' as *;
+
+:root {
+  --theme-color-primary: #196bd5;
+  --theme-color-primary-rgb: 25, 107, 213;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.apos-area,
+.bp-rich-text-widget {
+  display: flex;
+  flex-direction: column;
+}
+
+.bp-rich-text-widget > *:last-child {
+  margin-bottom: 0;
+}
+
+.section-generic-widget__img img,
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.section-generic-widget__img img {
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.section-generic-widget ul {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+
+.section-generic-widget li + li {
+  margin-top: 0.5rem;
+}
+
+.footer .footer-social a {
+  margin: 0 0.45rem;
+}
+
+@media (max-width: 991.98px) {
+  .section-generic-widget .section-generic-widget__content {
+    padding: 60px 30px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .section-generic-widget .section-generic-widget__img img {
+    max-height: 420px;
+  }
+
+  .footer .footer-menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer .footer-menu p {
+    border-right: 0;
+  }
+}

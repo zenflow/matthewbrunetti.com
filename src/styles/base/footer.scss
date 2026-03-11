@@ -1,0 +1,133 @@
+.footer {
+  position: relative;
+  background: var(--theme-color-primary);
+
+  a, a:hover {
+    color: #ffffff;
+  }
+
+  a:hover, a:hover i {
+    color: #414141;
+  }
+
+  .container-fluid {
+    padding: 60px 0 0 0;
+  }
+
+  .footer-info {
+    position: relative;
+    width: 100%;
+    text-align: center;
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 30px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    h3 {
+      margin-bottom: 25px;
+      font-size: 22px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+  }
+
+  .footer-menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    p {
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 20px;
+      padding: 0 15px;
+      border-right: 1px solid #ffffff;
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+
+  .footer-social {
+    position: relative;
+    margin-top: 15px;
+
+    a {
+      display: inline-block;
+
+      i {
+        margin-right: 15px;
+        font-size: 20px;
+        transition: .3s;
+      }
+
+      &:last-child i {
+        margin: 0;
+      }
+    }
+  }
+
+  .copyright {
+    position: relative;
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: smaller;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 50%;
+      height: 1px;
+      top: 0;
+      left: 25%;
+      background: rgba(256, 256, 256, .2);
+    }
+
+    p {
+      margin: 0;
+      color: #ffffff;
+
+      a {
+        color: #ffffff;
+        font-weight: 600;
+
+        &:hover {
+          color: #414141;
+        }
+      }
+    }
+
+    .col-md-6:last-child p {
+      text-align: right;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .footer {
+    .footer-info {
+      h2 {
+        margin-bottom: 20px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      h3 {
+        margin-bottom: 20px;
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 16px;
+        padding: 0 5px;
+      }
+    }
+  }
+}
