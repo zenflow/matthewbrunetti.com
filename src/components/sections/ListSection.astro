@@ -1,6 +1,5 @@
 ---
 import type { ListSection } from '../../lib/content';
-import ServiceIcon from '../ServiceIcon.astro';
 import BlockRenderer from '../blocks/BlockRenderer.astro';
 
 interface Props {
@@ -16,12 +15,12 @@ const { section } = Astro.props;
       <p>{section.heading}</p>
       <h2>{section.title}</h2>
     </div>
-    <div class="section-list-widget__grid">
-      {section.items.map((item) => (
-        <div class="section-list-widget__cell">
+    <div class="row">
+      {section.items.map((item, index) => (
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay={`${index / 5}s`}>
           <div class="section-list-widget__item">
             <div class="section-list-widget__icon">
-              <ServiceIcon icon={item.icon} />
+              <i class={`fa fa-${item.icon}`}></i>
             </div>
             <div class="section-list-widget__text">
               <h3>{item.title}</h3>

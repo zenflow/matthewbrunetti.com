@@ -9,19 +9,20 @@ interface Props {
 const { section } = Astro.props;
 const hasImage = section.image.length > 0 && section.imagePosition !== 'none';
 const imageFirst = section.imagePosition === 'left';
+const contentColumnClass = hasImage ? 'col-lg-6' : 'col-lg-12';
 ---
 
-<section id={section.anchorId} class="section-generic-widget">
+<section class="section-generic-widget">
   <div class="container-fluid">
-    <div class:list={['section-generic-widget__row', { 'image-left': imageFirst, 'image-right': !imageFirst }]}>
+    <div class="row wow slideInRight" data-wow-delay="0.1s">
       {hasImage && imageFirst && (
-        <div class="section-generic-widget__img">
+        <div class="section-generic-widget__img col-lg-6">
           {section.image.map((block) => (
             <BlockRenderer block={block} imageClass="section-photo generic-photo" />
           ))}
         </div>
       )}
-      <div class="section-generic-widget__content" style={`text-align: ${section.textAlign};`}>
+      <div class={`section-generic-widget__content ${contentColumnClass}`} style={`text-align: ${section.textAlign};`}>
         <div class="section-header">
           <p>{section.heading}</p>
           <h2>{section.title}</h2>
@@ -31,7 +32,7 @@ const imageFirst = section.imagePosition === 'left';
         ))}
       </div>
       {hasImage && !imageFirst && (
-        <div class="section-generic-widget__img">
+        <div class="section-generic-widget__img col-lg-6">
           {section.image.map((block) => (
             <BlockRenderer block={block} imageClass="section-photo generic-photo" />
           ))}

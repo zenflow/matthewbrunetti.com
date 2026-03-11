@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HomeEnhancements from '../components/HomeEnhancements.astro';
 import SectionRenderer from '../components/sections/SectionRenderer.astro';
 import { getHomeNavItems, getSiteGlobal, getSiteHome } from '../lib/content';
 
@@ -15,7 +14,7 @@ const navItems = getHomeNavItems(home);
   description={home.description}
   fancyNavbar={home.fancyNavbar}
   navItems={navItems}
+  isHomePage={true}
 >
   {home.sections.map((section) => <SectionRenderer section={section} />)}
-  <HomeEnhancements />
 </BaseLayout>

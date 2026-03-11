@@ -13,4 +13,4 @@ const { src, alt, class: className, loading = 'lazy' } = Astro.props;
 const image = resolveSiteAsset(src);
 ---
 
-<Image src={image} alt={alt} class={className} loading={loading} />
+<Image src={image} alt={alt} class:list={['bp-image-widget', className]} loading={loading} />

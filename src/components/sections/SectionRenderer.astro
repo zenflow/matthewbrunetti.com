@@ -11,6 +11,7 @@ interface Props {
 const { section } = Astro.props;
 ---
 
+{section.isLinkInNavbar && <div id={section.anchorId} style="position: relative; top: -60px"></div>}
 {section.type === 'hero' && <HeroSection section={section} />}
 {section.type === 'generic' && <GenericSection section={section} />}
 {section.type === 'list' && <ListSection section={section} />}

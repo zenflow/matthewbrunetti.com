@@ -6,9 +6,10 @@ interface Props {
 }
 
 const { block } = Astro.props;
-const Tag = block.tag as keyof astroHTML.JSX.IntrinsicElements;
 ---
 
-<div class="block-typed-text-widget" data-typed-items={JSON.stringify(block.items)}>
-  <Tag data-typed-value>{block.items[0]}</Tag>
-</div>
+<div
+  class="block-typed-text-widget"
+  data-widget-text={block.items.join(',')}
+  data-widget-tag={block.tag}
+></div>

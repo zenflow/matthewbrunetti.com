@@ -4,11 +4,11 @@ This is the implementation status board for the Astro rewrite.
 
 ## Current Status
 
-- Current phase: `Phase 5`
-- Last completed step: `4. Implement section/block renderers for the real home page content`
-- Current focus: `match the home page structure, styling, anchors, and key motion closely`
-- Next planned focus: `add /blog/ and future-ready post support`
-- Verification so far: `npm run build` after Phases 1-4 and `npm run migrate:legacy-media`
+- Current phase: `Phase 6`
+- Last completed step: `5. Match the home page structure, styling, anchors, and key motion closely`
+- Current focus: `add /blog/ and future-ready post support`
+- Next planned focus: `add metadata, sitemap, redirects, and asset validation`
+- Verification so far: `npm run build` after Phases 1-5 and `npm run migrate:legacy-media`
 
 ## Recommended Execution Order
 
@@ -16,7 +16,7 @@ This is the implementation status board for the Astro rewrite.
 - [x] 2. Add content schemas and placeholder content files.
 - [x] 3. Migrate legacy images into Astro assets and add path-based asset resolution.
 - [x] 4. Implement section/block renderers for the real home page content.
-- [ ] 5. Match the home page structure, styling, anchors, and key motion closely.
+- [x] 5. Match the home page structure, styling, anchors, and key motion closely.
 - [ ] 6. Add `/blog/` and future-ready post support.
 - [ ] 7. Add metadata, sitemap, redirects, and asset validation.
 - [ ] 8. Do final parity review.
@@ -31,3 +31,4 @@ This is the implementation status board for the Astro rewrite.
 - The old BSON dump is now reference material, not an intended ongoing import source.
 - Legacy image files now live under `src/assets/site/legacy/` and content references them by local path.
 - The home page now renders real content blocks and sections from `src/content/site/home.json`.
+- The home page now reuses the legacy dependency stack and closely mirrors the legacy markup, styles, and motion behavior.

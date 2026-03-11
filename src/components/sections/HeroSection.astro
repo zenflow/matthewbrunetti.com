@@ -15,21 +15,25 @@ const heroStyle = section.textureImage
     : undefined;
 ---
 
-<section id={section.anchorId} class="section-hero-widget" style={heroStyle}>
+<section class="section-hero-widget" style={heroStyle}>
   <div class="container-fluid">
-    <div class="hero-layout">
-      <div class="hero-content">
-        <div class="hero-text">
-          {section.intro.map((block) => (
-            <BlockRenderer block={block} />
-          ))}
+    <div class="row align-items-center">
+      <div class="col-sm-12 col-md-6">
+        <div class="hero-content">
+          <div class="hero-text">
+            {section.intro.map((block) => (
+              <BlockRenderer block={block} />
+            ))}
+          </div>
         </div>
       </div>
-      <div class="hero-image-column">
+      <div class="col-sm-12 col-md-6 d-none d-md-block">
         <div class="hero-image">
-          {section.image.map((block) => (
-            <BlockRenderer block={block} imageClass="hero-photo" imageLoading="eager" />
-          ))}
+          <div class="wow animated bounceIn">
+            {section.image.map((block) => (
+              <BlockRenderer block={block} imageClass="hero-photo" imageLoading="eager" />
+            ))}
+          </div>
         </div>
       </div>
     </div>
