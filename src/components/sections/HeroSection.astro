@@ -18,20 +18,18 @@ const heroStyle = section.textureImage
 <section id={section.anchorId} class="section-hero-widget" style={heroStyle}>
   <div class="container-fluid">
     <div class="hero-layout">
-      <div class="hero-content" data-reveal="slide-right">
+      <div class="hero-content">
         <div class="hero-text">
           {section.intro.map((block) => (
             <BlockRenderer block={block} />
           ))}
         </div>
       </div>
-      <div class="hero-image-column" data-reveal="bounce-in" data-reveal-delay="120">
+      <div class="hero-image-column">
         <div class="hero-image">
-          <div class="hero-image-tilt" data-tilt-card>
-            {section.image.map((block) => (
-              <BlockRenderer block={block} imageClass="hero-photo" imageLoading="eager" />
-            ))}
-          </div>
+          {section.image.map((block) => (
+            <BlockRenderer block={block} imageClass="hero-photo" imageLoading="eager" />
+          ))}
         </div>
       </div>
     </div>

@@ -18,7 +18,7 @@ Use `docs/progress.md` as the current status board and update it whenever a majo
 - [x] 2. Add content schemas and placeholder content files.
 - [x] 3. Migrate legacy images into Astro assets and add path-based asset resolution.
 - [x] 4. Implement section/block renderers for the real home page content.
-- [x] 5. Match the home page structure, styling, anchors, and key motion closely.
+- [ ] 5. Match the home page structure, styling, anchors, and key motion closely.
 - [ ] 6. Add `/blog/` and future-ready post support.
 - [ ] 7. Add metadata, sitemap, redirects, and asset validation.
 - [ ] 8. Do final parity review.

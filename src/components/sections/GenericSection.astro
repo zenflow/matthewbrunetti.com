@@ -13,10 +13,7 @@ const imageFirst = section.imagePosition === 'left';
 
 <section id={section.anchorId} class="section-generic-widget">
   <div class="container-fluid">
-    <div
-      class:list={['section-generic-widget__row', { 'image-left': imageFirst, 'image-right': !imageFirst }]}
-      data-reveal="slide-right"
-    >
+    <div class:list={['section-generic-widget__row', { 'image-left': imageFirst, 'image-right': !imageFirst }]}>
       {hasImage && imageFirst && (
         <div class="section-generic-widget__img">
           {section.image.map((block) => (
