@@ -127,6 +127,7 @@ p {
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 50;
+  transition: background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, backdrop-filter 0.5s ease;
 }
 
 .navbar {
@@ -345,9 +346,48 @@ p {
   text-align: right;
 }
 
+.hero-image-tilt {
+  display: inline-block;
+  transform: perspective(1200px) rotateX(var(--tilt-rotate-x, 0deg)) rotateY(var(--tilt-rotate-y, 0deg))
+    scale(var(--tilt-scale, 1));
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+
 .hero-photo {
-  max-width: min(420px, 66%);
+  width: min(420px, 66vw);
+  max-width: 66%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   margin: 0 0 0 auto;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: transform, opacity;
+}
+
+[data-reveal='fade-up'] {
+  transform: translateY(40px);
+}
+
+[data-reveal='slide-right'] {
+  transform: translateX(-40px);
+}
+
+[data-reveal='zoom-in'] {
+  transform: scale(0.92);
+}
+
+[data-reveal='bounce-in'] {
+  transform: scale(0.88) translateY(16px);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
 }
 
 .section-generic-widget,
@@ -820,6 +860,10 @@ p {
   .hero-photo {
     max-width: min(340px, 100%);
     margin: 0 auto;
+  }
+
+  .hero-image-tilt {
+    display: block;
   }
 
   .section-generic-widget__content {
