@@ -1,12 +1,9 @@
 ---
 import '../styles/global.css';
-
-interface NavItem {
-  label: string;
-  href: string;
-}
+import type { NavItem, SiteGlobalData } from '../lib/content';
 
 interface Props {
+  site: SiteGlobalData;
   title?: string;
   description?: string;
   fancyNavbar?: boolean;
@@ -14,13 +11,24 @@ interface Props {
 }
 
 const {
+  site,
   title = 'Matthew Brunetti',
   description = 'Personal website of Matthew Brunetti.',
   fancyNavbar = false,
   navItems = [],
 } = Astro.props;
 
-const pageTitle = title === 'Matthew Brunetti' ? title : `${title} | Matthew Brunetti`;
+function hexToRgbString(hex: string) {
+  const normalized = hex.replace('#', '').slice(0, 6);
+  const safeHex = normalized.padEnd(6, '0');
+  const parts = safeHex.match(/.{1,2}/g) ?? ['00', '00', '00'];
+
+  return parts.map((part) => Number.parseInt(part, 16)).join(', ');
+}
+
+const themePrimary = site.theme.primary;
+const themePrimaryRgb = hexToRgbString(themePrimary);
+const pageTitle = title === site.siteTitle ? title : `${title} | ${site.siteTitle}`;
 const navClassName = [
   'navcontainer',
   'navcontainer-scrolledtotop',
@@ -44,12 +52,12 @@ const navClassName = [
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body style={`--theme-color-primary: ${themePrimary}; --theme-color-primary-rgb: ${themePrimaryRgb};`}>
     <div id="top" class="main-wrapper">
       <div class={navClassName}>
         <header class="navbar-shell">
           <nav class="navbar">
-            <a href="/" class="navbar-brand">Matthew Brunetti</a>
+            <a href="/" class="navbar-brand">{site.siteTitle}</a>
             {navItems.length > 0 && (
               <div class="navbar-nav" aria-label="Primary">
                 {navItems.map((item) => (
@@ -70,12 +78,21 @@ const navClassName = [
 
     <footer class="footer">
       <div class="footer-inner">
-        <h2>Matthew Brunetti</h2>
-        <h3>Full-Stack Software Engineer</h3>
+        <h2>{site.person.name}</h2>
+        <h3>{site.person.title}</h3>
         <div class="footer-menu">
-          <a href="tel:+17052109826">+1-705-210-9826</a>
-          <a href="mailto:zenflow87@gmail.com">zenflow87@gmail.com</a>
+          <a href={`tel:${site.person.phone}`}>{site.person.phone}</a>
+          <a href={`mailto:${site.person.email}`}>{site.person.email}</a>
         </div>
+        {site.social.length > 0 && (
+          <div class="footer-social" aria-label="Social links">
+            {site.social.map((item) => (
+              <a href={item.url} target="_blank" rel="noreferrer">
+                {item.platform}
+              </a>
+            ))}
+          </div>
+        )}
       </div>
     </footer>
 

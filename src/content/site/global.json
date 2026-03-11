@@ -1,0 +1,32 @@
+{
+  "siteTitle": "Matthew Brunetti",
+  "canonicalUrl": "https://www.matthewbrunetti.com",
+  "defaultDescription": "Personal website of Matthew Brunetti, full-stack software engineer.",
+  "theme": {
+    "primary": "#196BD5FF"
+  },
+  "person": {
+    "name": "Matthew Brunetti",
+    "title": "Full-Stack Software Engineer",
+    "phone": "+1-705-210-9826",
+    "email": "zenflow87@gmail.com"
+  },
+  "social": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/zenflow"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/matthewfbrunetti/"
+    },
+    {
+      "platform": "Twitter",
+      "url": "https://twitter.com/zenflow87"
+    },
+    {
+      "platform": "Facebook",
+      "url": "https://www.facebook.com/matthew.brunetti/"
+    }
+  ]
+}

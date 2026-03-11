@@ -1,0 +1,8 @@
+{
+  "title": "Blog",
+  "description": "Future-ready blog route for posts and writing by Matthew Brunetti.",
+  "eyebrow": "Blog",
+  "introHtml": "",
+  "emptyStateTitle": "No posts yet.",
+  "emptyStateBody": "Published posts will appear here once the Astro rewrite is ready."
+}

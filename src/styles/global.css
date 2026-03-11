@@ -203,6 +203,25 @@ p {
   gap: 1.5rem;
 }
 
+.pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.pill-list span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
 .placeholder-card {
   padding: 1.5rem;
   border: 1px solid var(--border-color);
@@ -249,6 +268,19 @@ p {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.75rem 1.5rem;
+  font-weight: 600;
+}
+
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1rem;
+  margin-top: 1.5rem;
+}
+
+.footer-social a {
+  font-size: 0.95rem;
   font-weight: 600;
 }
 

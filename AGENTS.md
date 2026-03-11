@@ -15,7 +15,7 @@ This repo is migrating `www.matthewbrunetti.com` from ApostropheCMS to Astro.
 Use `docs/progress.md` as the current status board and update it whenever a major execution step is completed.
 
 - [x] 1. Scaffold Astro, TypeScript, and base layout.
-- [ ] 2. Add content schemas and placeholder content files.
+- [x] 2. Add content schemas and placeholder content files.
 - [ ] 3. Build a repeatable importer from BSON + uploads into repo-managed content.
 - [ ] 4. Implement section/block renderers for the real home page content.
 - [ ] 5. Match the home page structure, styling, anchors, and key motion closely.

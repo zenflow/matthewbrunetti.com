@@ -1,24 +1,30 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getHomeNavItems, getSiteBlog, getSiteGlobal, getSiteHome } from '../../lib/content';
 
-const navItems = [
-  { label: 'Home', href: '/#home' },
-  { label: 'About', href: '/#about' },
-  { label: 'Services', href: '/#services' },
-];
+const site = await getSiteGlobal();
+const home = await getSiteHome();
+const blogPage = await getSiteBlog();
+const navItems = getHomeNavItems(home, { includeHomePrefix: true });
 ---
 
-<BaseLayout title="Blog" description="Future-ready blog route for matthewbrunetti.com." navItems={navItems}>
+<BaseLayout site={site} title={blogPage.title} description={blogPage.description} navItems={navItems}>
   <section class="section-placeholder page-shell">
     <div class="container narrow">
       <div class="section-header">
-        <p>Blog</p>
-        <h1>Blog route scaffolded</h1>
+        <p>{blogPage.eyebrow}</p>
+        <h1>{blogPage.title}</h1>
       </div>
-      <p>
-        The legacy dump does not currently contain published blog posts, but this route is now reserved for the
-        future post architecture.
-      </p>
+      <div class="placeholder-grid">
+        <article class="placeholder-card">
+          <strong>Collection status</strong>
+          <p>The `blogPosts` collection is defined and ready for future Markdown or MDX entries.</p>
+        </article>
+        <article class="placeholder-card">
+          <strong>{blogPage.emptyStateTitle}</strong>
+          <p>{blogPage.emptyStateBody}</p>
+        </article>
+      </div>
     </div>
   </section>
 </BaseLayout>

@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/zenflow/matthewbrunetti.com#readme",
   "dependencies": {
+    "@astrojs/mdx": "^5.0.0",
     "astro": "^6.0.2"
   },
   "devDependencies": {

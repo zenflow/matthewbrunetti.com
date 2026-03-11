@@ -1,0 +1,168 @@
+{
+  "title": "Home",
+  "description": "Personal website of Matthew Brunetti, full-stack software engineer.",
+  "fancyNavbar": true,
+  "sections": [
+    {
+      "type": "hero",
+      "name": "Home",
+      "anchorId": "home",
+      "isLinkInNavbar": true,
+      "isFixedBackground": true,
+      "textureImage": "ckw8bdm3e00102sunq42to5cb:en:published",
+      "intro": [
+        {
+          "type": "richText",
+          "html": "<p>Hi, I'm</p><h1>Matthew Brunetti</h1>"
+        },
+        {
+          "type": "typedText",
+          "tag": "h2",
+          "items": ["Software Engineer", "Web Developer", "Programming Coach"]
+        },
+        {
+          "type": "buttonSet",
+          "isInvertedColors": true,
+          "buttons": [
+            {
+              "text": "Contact Me",
+              "url": "mailto:zenflow87@gmail.com",
+              "target": "_blank"
+            },
+            {
+              "text": "Book A Meeting",
+              "url": "https://calendly.com/matthew-brunetti/30min",
+              "target": "_blank"
+            }
+          ]
+        }
+      ],
+      "image": [
+        {
+          "type": "image",
+          "imageId": "ckw8bj203002m2sun52u73kle:en:published"
+        }
+      ]
+    },
+    {
+      "type": "generic",
+      "name": "About",
+      "anchorId": "about",
+      "isLinkInNavbar": true,
+      "heading": "About Me",
+      "title": "Full-stack Engineer",
+      "imagePosition": "left",
+      "textAlign": "left",
+      "main": [
+        {
+          "type": "richText",
+          "html": "<ul><li><p>Self-taught software engineer with 22 years of programming experience</p></li></ul><ul><li><p>Strong talent for collaboration and leveraging the open-source community</p></li><li><p>Passion for creating high-end user and developer experiences</p></li><li><p>Lover of philosophy and meditation</p></li><li><p>Expert world traveler and adventurer</p><p><br /></p></li></ul>"
+        },
+        {
+          "type": "richText",
+          "html": "<h4>Skills *</h4>"
+        },
+        {
+          "type": "percentages",
+          "items": [
+            {
+              "label": "JavaScript",
+              "percentage": 97
+            },
+            {
+              "label": "Node.js",
+              "percentage": 95
+            },
+            {
+              "label": "Open Web Platform",
+              "percentage": 85
+            },
+            {
+              "label": "React",
+              "percentage": 92
+            },
+            {
+              "label": "Vue",
+              "percentage": 80
+            },
+            {
+              "label": "Web Design",
+              "percentage": 61
+            }
+          ]
+        },
+        {
+          "type": "richText",
+          "html": "<p><em>* Percentages arbitrary yet not so arbitrary</em></p>"
+        },
+        {
+          "type": "buttonSet",
+          "isInvertedColors": false,
+          "buttons": [
+            {
+              "text": "Download Resume",
+              "url": "https://github.com/zenflow/resume/releases/latest/download/Resume.of.Matthew.Francis.Brunetti.pdf",
+              "target": "_self"
+            }
+          ]
+        }
+      ],
+      "image": [
+        {
+          "type": "image",
+          "imageId": "ckw8c0fdl00962sunt7m69xy9:en:published"
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "name": "Services",
+      "anchorId": "services",
+      "isLinkInNavbar": true,
+      "heading": "My Services",
+      "title": "What I Offer",
+      "items": [
+        {
+          "icon": "cube",
+          "title": "Software Solutions",
+          "description": [
+            {
+              "type": "richText",
+              "html": "<p>Get fitted with software to suit any purpose. We'll look at options both commercial and free/open-source, to get you the best value for your money.</p>"
+            }
+          ]
+        },
+        {
+          "icon": "code",
+          "title": "App Development",
+          "description": [
+            {
+              "type": "richText",
+              "html": "<p>If the app you need doesn't exist yet, we'll build it. I do <strong>web apps</strong>, mobile apps, desktop apps, mobile/desktop apps, and web/mobile/desktop apps.</p>"
+            }
+          ]
+        },
+        {
+          "icon": "robot",
+          "title": "Automation Engineering",
+          "description": [
+            {
+              "type": "richText",
+              "html": "<p>Save time and increase output by automating tedious tasks with <strong>scripts </strong>on your desktop and or the cloud</p>"
+            }
+          ]
+        },
+        {
+          "icon": "chalkboard-teacher",
+          "title": "Programming Coaching",
+          "description": [
+            {
+              "type": "richText",
+              "html": "<p>Prefer to write that app or script yourself but feel you lack the skills? Whether you're a complete beginner, or could just use some help with specific challenges, I got you.</p>"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
