@@ -1,4 +1,6 @@
 ---
+import LayoutEnhancements from '../components/LayoutEnhancements.astro';
+import SocialIcon from '../components/SocialIcon.astro';
 import '../styles/global.css';
 import type { NavItem, SiteGlobalData } from '../lib/content';
 
@@ -29,6 +31,7 @@ function hexToRgbString(hex: string) {
 const themePrimary = site.theme.primary;
 const themePrimaryRgb = hexToRgbString(themePrimary);
 const pageTitle = title === site.siteTitle ? title : `${title} | ${site.siteTitle}`;
+const isHomePage = Astro.url.pathname === '/';
 const navClassName = [
   'navcontainer',
   'navcontainer-scrolledtotop',
@@ -53,20 +56,39 @@ const navClassName = [
     />
   </head>
   <body style={`--theme-color-primary: ${themePrimary}; --theme-color-primary-rgb: ${themePrimaryRgb};`}>
+    <div id="loader" class="show">
+      <div class="loader"></div>
+    </div>
     <div id="top" class="main-wrapper">
       <div class={navClassName}>
         <header class="navbar-shell">
-          <nav class="navbar">
-            <a href="/" class="navbar-brand">{site.siteTitle}</a>
-            {navItems.length > 0 && (
-              <div class="navbar-nav" aria-label="Primary">
-                {navItems.map((item) => (
-                  <a href={item.href} class="nav-item nav-link">
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-            )}
+          <nav class="navbar navbar-light">
+            <div class="container-fluid navbar-inner">
+              <a href="/" class="navbar-brand">{site.siteTitle}</a>
+              {navItems.length > 0 && (
+                <>
+                  <button
+                    type="button"
+                    class="navbar-toggler"
+                    data-nav-toggle
+                    aria-controls="navbarCollapse"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="navbar-collapse collapse justify-content-between" id="navbarCollapse" data-nav-collapse>
+                    <div class="navbar-nav ml-auto" aria-label="Primary">
+                      {navItems.map((item) => (
+                        <a href={item.href} class="nav-item nav-link">
+                          {item.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
           </nav>
         </header>
       </div>
@@ -77,25 +99,39 @@ const navClassName = [
     </div>
 
     <footer class="footer">
-      <div class="footer-inner">
-        <h2>{site.person.name}</h2>
-        <h3>{site.person.title}</h3>
-        <div class="footer-menu">
-          <a href={`tel:${site.person.phone}`}>{site.person.phone}</a>
-          <a href={`mailto:${site.person.email}`}>{site.person.email}</a>
-        </div>
-        {site.social.length > 0 && (
-          <div class="footer-social" aria-label="Social links">
-            {site.social.map((item) => (
-              <a href={item.url} target="_blank" rel="noreferrer">
-                {item.platform}
-              </a>
-            ))}
+      <div class="container-fluid">
+        <div class="container">
+          <div class="footer-info">
+            <h2>{site.person.name}</h2>
+            <h3>{site.person.title}</h3>
+            <div class="footer-menu">
+              <p><a href={`tel:${site.person.phone}`}>{site.person.phone}</a></p>
+              <p><a href={`mailto:${site.person.email}`}>{site.person.email}</a></p>
+            </div>
+            {site.social.length > 0 && (
+              <div class="footer-social" aria-label="Social links">
+                {site.social.map((item) => (
+                  <a href={item.url} target="_blank" rel="noreferrer" aria-label={item.platform}>
+                    <SocialIcon platform={item.platform} />
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
-        )}
+        </div>
+        <div class="container copyright">
+          <p>
+            &copy; {site.person.name}, All Right Reserved | Design created by{' '}
+            <a href="https://htmlcodex.com" target="_blank" rel="noreferrer">HTML Codex</a> & customized by
+            Matthew Brunetti
+          </p>
+        </div>
       </div>
     </footer>
 
-    <a class="btn back-to-top" href="#top">Top</a>
+    <a class="btn back-to-top" href="#top" aria-label="Back to top">
+      <span aria-hidden="true">^</span>
+    </a>
+    <LayoutEnhancements isHomePage={isHomePage} />
   </body>
 </html>
